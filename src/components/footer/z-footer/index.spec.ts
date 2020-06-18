@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZFooter } from './index';
 
-describe(`Suite test ZFooter`, () => {
-  it(`Test render ZFooter vuoto`, async () => {
+describe(`Suite test ZFooter`, function () {
+  it(`Test render ZFooter vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -43,7 +43,7 @@ describe(`Suite test ZFooter`, () => {
     `);
   });
 
-  it(`Test render ZFooter con zanichelli link`, async () => {
+  it(`Test render ZFooter con zanichelli link`, async function () {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -175,7 +175,7 @@ describe(`Suite test ZFooter`, () => {
     );
   });
 
-  it(`Test render ZFooter con myz link`, async () => {
+  it(`Test render ZFooter con myz link`, async function () {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -220,7 +220,7 @@ describe(`Suite test ZFooter`, () => {
     );
   });
 
-  it(`Test render ZFooter con social`, async () => {
+  it(`Test render ZFooter con social`, async function () {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -282,7 +282,7 @@ describe(`Suite test ZFooter`, () => {
     );
   });
 
-  it(`Test render ZFooter con social, ma senza il parametro 'description' `, async () => {
+  it(`Test render ZFooter con social, ma senza il parametro 'description' `, async function () {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -344,7 +344,7 @@ describe(`Suite test ZFooter`, () => {
     );
   });
 
-  it(`Test render ZFooter con bottom link`, async () => {
+  it(`Test render ZFooter con bottom link`, async function () {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{

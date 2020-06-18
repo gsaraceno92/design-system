@@ -29,7 +29,7 @@ import {
   shadow: true,
 })
 export class ZInput {
-  @Element() hostElement: HTMLElement;
+  @Element() hostElement: HTMLZInputElement;
 
   /** the id of the input element */
   @Prop() htmlid: string = randomId();
@@ -94,20 +94,44 @@ export class ZInput {
   }
 
   /** get the input value */
+
+  /** get the input value */
+  
+
+  /** get the input value */
+  
+
+  /** get the input value */
   @Method()
-  async getValue(): Promise<string> {
+asyncasync  async getValue(): Promise<string> {
     return this.value;
   }
 
   /** set the input value */
+
+  /** set the input value */
+  
+
+  /** set the input value */
+  
+
+  /** set the input value */
   @Method()
-  async setValue(value: string): Promise<void> {
+asyncasync  async setValue(value: string): Promise<void> {
     this.value = value;
   }
 
   /** get checked status */
+
+  /** get checked status */
+  
+
+  /** get checked status */
+  
+
+  /** get checked status */
   @Method()
-  async isChecked(): Promise<boolean> {
+asyncasync  async isChecked(): Promise<boolean> {
     switch (this.type) {
       case InputTypeEnum.checkbox:
         return this.checked;

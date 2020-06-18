@@ -4,11 +4,11 @@ import { ZList } from '../../list/z-list';
 
 import { ZHeader } from './index';
 
-describe(`Suite test ZHeader`, () => {
+describe(`Suite test ZHeader`, function () {
   /*
   TEST MOBILE
    */
-  it(`Test render ZHeader mobile myz utente non loggato`, async () => {
+  it(`Test render ZHeader mobile myz utente non loggato`, async function () {
     const page = await newSpecPage({
       components: [ZHeader],
       html: initHeader(false, false, true, false, false, ``),
@@ -34,7 +34,7 @@ describe(`Suite test ZHeader`, () => {
   `);
   });
 
-  it(`Test render ZHeader mobile non myz utente non loggato`, async () => {
+  it(`Test render ZHeader mobile non myz utente non loggato`, async function () {
     const page = await newSpecPage({
       components: [ZHeader],
       html: initHeader(true, false, false, false, false, ``),
@@ -64,7 +64,7 @@ describe(`Suite test ZHeader`, () => {
   `);
   });
 
-  it(`Test render ZHeader mobile myz loggato`, async () => {
+  it(`Test render ZHeader mobile myz loggato`, async function () {
     const page = await newSpecPage({
       components: [ZHeader],
       html: initHeader(true, true, true, false, false, ``),
@@ -119,7 +119,7 @@ describe(`Suite test ZHeader`, () => {
     `);
   });
 
-  it(`Test render ZHeader mobile myz loggato open`, async () => {
+  it(`Test render ZHeader mobile myz loggato open`, async function () {
     const page = await newSpecPage({
       components: [ZHeader, ZList],
       html: initHeader(true, true, true, true, true, ``),
@@ -213,7 +213,7 @@ describe(`Suite test ZHeader`, () => {
   `);
   });
 
-  it(`Test click ZHeader mobile toggle`, async () => {
+  it(`Test click ZHeader mobile toggle`, async function () {
     const page = await newSpecPage({
       components: [ZHeader],
       html: initHeader(true, true, true, true, true, ``),
@@ -246,7 +246,7 @@ describe(`Suite test ZHeader`, () => {
   TEST DESKTOP
   */
 
-  it(`Test render ZHeader myz vuoto`, async () => {
+  it(`Test render ZHeader myz vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZHeader],
       html: initHeader(false, false, true, false, false, ``),
@@ -276,7 +276,7 @@ describe(`Suite test ZHeader`, () => {
   `);
   });
 
-  it(`Test render ZHeader myz loggato`, async () => {
+  it(`Test render ZHeader myz loggato`, async function () {
     const page = await newSpecPage({
       components: [ZHeader],
       html: initHeader(true, true, true, true, true, `home`),
@@ -350,7 +350,7 @@ describe(`Suite test ZHeader`, () => {
   `);
   });
 
-  it(`Test render ZHeader myz non loggato`, async () => {
+  it(`Test render ZHeader myz non loggato`, async function () {
     const page = await newSpecPage({
       components: [ZHeader],
       html: initHeader(false, false, true, true, true, ``),
@@ -395,7 +395,7 @@ describe(`Suite test ZHeader`, () => {
   `);
   });
 
-  it(`Test render ZHeader non myz loggato`, async () => {
+  it(`Test render ZHeader non myz loggato`, async function () {
     const page = await newSpecPage({
       components: [ZHeader],
       html: initHeader(true, true, false, true, true, ``),
@@ -441,7 +441,7 @@ describe(`Suite test ZHeader`, () => {
   `);
   });
 
-  it(`Test render ZHeader active menu item`, async () => {
+  it(`Test render ZHeader active menu item`, async function () {
     const page = await newSpecPage({
       components: [ZHeader],
       html: initHeader(true, true, true, true, true, ``),

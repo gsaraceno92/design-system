@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZLink } from './index';
 
-describe(`Suite test ZLink`, () => {
-  it(`Test render ZLink vuoto`, async () => {
+describe(`Suite test ZLink`, function () {
+  it(`Test render ZLink vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZLink],
       html: `<z-link></z-link>`,
@@ -19,7 +19,7 @@ describe(`Suite test ZLink`, () => {
     `);
   });
 
-  it(`Test render ZLink con link`, async () => {
+  it(`Test render ZLink con link`, async function () {
     const page = await newSpecPage({
       components: [ZLink],
       html: `<z-link href="http://www.google.com/"></z-link>`,
@@ -35,7 +35,7 @@ describe(`Suite test ZLink`, () => {
     `);
   });
 
-  it(`Test render ZLink con label`, async () => {
+  it(`Test render ZLink con label`, async function () {
     const page = await newSpecPage({
       components: [ZLink],
       html: `<z-link>label</z-link>`,
@@ -52,7 +52,7 @@ describe(`Suite test ZLink`, () => {
     `);
   });
 
-  it(`Test render ZLink con icon`, async () => {
+  it(`Test render ZLink con icon`, async function () {
     const page = await newSpecPage({
       components: [ZLink],
       html: `<z-link icon="icon"></z-link>`,
@@ -69,7 +69,7 @@ describe(`Suite test ZLink`, () => {
     `);
   });
 
-  it(`Test render ZLink disabled`, async () => {
+  it(`Test render ZLink disabled`, async function () {
     const page = await newSpecPage({
       components: [ZLink],
       html: `<z-link isdisabled></z-link>`,
@@ -85,7 +85,7 @@ describe(`Suite test ZLink`, () => {
     `);
   });
 
-  it(`Test render ZLink white`, async () => {
+  it(`Test render ZLink white`, async function () {
     const page = await newSpecPage({
       components: [ZLink],
       html: `<z-link iswhite></z-link>`,
@@ -101,7 +101,7 @@ describe(`Suite test ZLink`, () => {
     `);
   });
 
-  it(`Test render ZLink target`, async () => {
+  it(`Test render ZLink target`, async function () {
     const page = await newSpecPage({
       components: [ZLink],
       html: `<z-link target="_blank"></z-link>`,
@@ -117,7 +117,7 @@ describe(`Suite test ZLink`, () => {
     `);
   });
 
-  it(`Test render ZLink active`, async () => {
+  it(`Test render ZLink active`, async function () {
     const page = await newSpecPage({
       components: [ZLink],
       html: `<z-link isactive></z-link>`,

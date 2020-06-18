@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZCardCover } from './index';
 
-describe(`Suite test ZCardCover`, () => {
-  it(`Test render ZCardCover vuota`, async () => {
+describe(`Suite test ZCardCover`, function () {
+  it(`Test render ZCardCover vuota`, async function () {
     const page = await newSpecPage({
       components: [ZCardCover],
       html: `<z-card-cover></z-card-cover>`,
@@ -17,7 +17,7 @@ describe(`Suite test ZCardCover`, () => {
     </z-card-cover>
     `);
   });
-  it(`Test render ZCardCover con alt e img`, async () => {
+  it(`Test render ZCardCover con alt e img`, async function () {
     const page = await newSpecPage({
       components: [ZCardCover],
       html: `

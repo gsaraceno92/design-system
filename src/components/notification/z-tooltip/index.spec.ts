@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZTooltip } from './index';
 
-describe(`Suite test ZTooltip`, () => {
-  it(`Test render ZTooltip left`, async () => {
+describe(`Suite test ZTooltip`, function () {
+  it(`Test render ZTooltip left`, async function () {
     const page = await newSpecPage({
       components: [ZTooltip],
       html: `<z-tooltip content='Ciao' type='left'></z-tooltip>`,
@@ -20,7 +20,7 @@ describe(`Suite test ZTooltip`, () => {
     `);
   });
 
-  it(`Test render ZTooltip right`, async () => {
+  it(`Test render ZTooltip right`, async function () {
     const page = await newSpecPage({
       components: [ZTooltip],
       html: `<z-tooltip content='Ciao' type='right'></z-tooltip>`,
@@ -37,7 +37,7 @@ describe(`Suite test ZTooltip`, () => {
     `);
   });
 
-  it(`Test render ZTooltip top`, async () => {
+  it(`Test render ZTooltip top`, async function () {
     const page = await newSpecPage({
       components: [ZTooltip],
       html: `<z-tooltip content='Ciao' type='top'></z-tooltip>`,
@@ -54,7 +54,7 @@ describe(`Suite test ZTooltip`, () => {
     `);
   });
 
-  it(`Test render ZTooltip bottom`, async () => {
+  it(`Test render ZTooltip bottom`, async function () {
     const page = await newSpecPage({
       components: [ZTooltip],
       html: `<z-tooltip content='Ciao' type='bottom'></z-tooltip>`,

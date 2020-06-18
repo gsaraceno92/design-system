@@ -3,8 +3,8 @@ import { newSpecPage } from '@stencil/core/testing';
 import { icons } from './icons';
 import { ZIcon } from './index';
 
-describe(`Suite test ZIcon`, () => {
-  it(`Test render ZIcon vuoto`, async () => {
+describe(`Suite test ZIcon`, function () {
+  it(`Test render ZIcon vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZIcon],
       html: `<z-icon></z-icon>`,
@@ -20,7 +20,7 @@ describe(`Suite test ZIcon`, () => {
     `);
   });
 
-  it(`Test render ZIcon con path`, async () => {
+  it(`Test render ZIcon con path`, async function () {
     const page = await newSpecPage({
       components: [ZIcon],
       html: `<z-icon name="download" iconid="zicon"></z-icon>`,
@@ -36,7 +36,7 @@ describe(`Suite test ZIcon`, () => {
     `);
   });
 
-  it(`Test render ZIcon con path con dimensioni`, async () => {
+  it(`Test render ZIcon con path con dimensioni`, async function () {
     const page = await newSpecPage({
       components: [ZIcon],
       html: `<z-icon name="download" iconid="zicon" width="10" height="10"></z-icon>`,
@@ -52,7 +52,7 @@ describe(`Suite test ZIcon`, () => {
     `);
   });
 
-  it(`Test render ZIcon con polygon`, async () => {
+  it(`Test render ZIcon con polygon`, async function () {
     const page = await newSpecPage({
       components: [ZIcon],
       html: `<z-icon name="chevron-down" iconid="zicon"></z-icon>`,
@@ -68,7 +68,7 @@ describe(`Suite test ZIcon`, () => {
     `);
   });
 
-  it(`Test render ZIcon con polygon con dimensioni`, async () => {
+  it(`Test render ZIcon con polygon con dimensioni`, async function () {
     const page = await newSpecPage({
       components: [ZIcon],
       html: `<z-icon name="chevron-down" iconid="zicon" width="10" height="10"></z-icon>`,

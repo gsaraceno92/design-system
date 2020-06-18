@@ -1,7 +1,7 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe(`z-list-item test end2end`, () => {
-  it(`Test that component exists`, async () => {
+describe(`z-list-item test end2end`, function () {
+  it(`Test that component exists`, async function () {
     const page = await newE2EPage();
     await page.setContent(`<z-list-item></z-list-item>`);
     const el = await page.find(`z-list-item`);
@@ -9,7 +9,7 @@ describe(`z-list-item test end2end`, () => {
     expect(el.shadowRoot).not.toBeNull;
   });
 
-  it(`Test that prop text is created`, async () => {
+  it(`Test that prop text is created`, async function () {
     const page = await newE2EPage();
     await page.setContent(`<z-list-item></z-list-item>`);
 
@@ -23,7 +23,7 @@ describe(`z-list-item test end2end`, () => {
     expect(el).toEqualText(`elemento`);
   });
 
-  it(`Test that prop link is created`, async () => {
+  it(`Test that prop link is created`, async function () {
     const page = await newE2EPage();
     await page.setContent(`<z-list-item></z-list-item>`);
 

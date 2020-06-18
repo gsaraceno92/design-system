@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZCardList } from './index';
 
-describe(`Suite test ZCardList`, () => {
-  it(`Test render ZCardList vuoto`, async () => {
+describe(`Suite test ZCardList`, function () {
+  it(`Test render ZCardList vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZCardList],
       html: `<z-card-list listdata='[{"isLink":true,"value":"Leggi sul browser","url":"https://booktab.it/"},{"isLink":true,"value":"Sito e risorse del libro","url":"http://online.scuola.zanichelli.it/curtisinvitoblu/"},{"isLink":false,"value":"Prove di verifica"},{"isLink":true,"value":"ZTE","url":"https://zte.zanichelli.it/"}]'></z-card-list>`,

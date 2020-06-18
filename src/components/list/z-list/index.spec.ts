@@ -4,8 +4,8 @@ import { ZListItem } from '../z-list-item/index';
 
 import { ZList } from './index';
 
-describe(`Suite test z-list`, () => {
-  it(`Test render lista vuota`, async () => {
+describe(`Suite test z-list`, function () {
+  it(`Test render lista vuota`, async function () {
     const page = await newSpecPage({
       components: [ZList, ZListItem],
       html: `<z-list></z-list>`,
@@ -21,7 +21,7 @@ describe(`Suite test z-list`, () => {
     `);
   });
 
-  it(`Test render lista con un elemento testuale`, async () => {
+  it(`Test render lista con un elemento testuale`, async function () {
     const page = await newSpecPage({
       components: [ZList, ZListItem],
       html: `<z-list></z-list>`,
@@ -50,7 +50,7 @@ describe(`Suite test z-list`, () => {
     `);
   });
 
-  it(`Test render lista con un elemento link`, async () => {
+  it(`Test render lista con un elemento link`, async function () {
     const page = await newSpecPage({
       components: [ZList, ZListItem],
       html: `<z-list inputrawdata='[{"text":"elemento lista","link":"http://www.google.it"}]'></z-list>`,
@@ -76,7 +76,7 @@ describe(`Suite test z-list`, () => {
     `);
   });
 
-  it(`Test render lista 2 un elemento, testo e link`, async () => {
+  it(`Test render lista 2 un elemento, testo e link`, async function () {
     const page = await newSpecPage({
       components: [ZList, ZListItem],
       html: `<z-list inputrawdata='[{"text":"elemento lista"},{"text":"link lista","link":"http://www.google.it"}]'></z-list>`,
@@ -114,7 +114,7 @@ describe(`Suite test z-list`, () => {
     `);
   });
 
-  it(`Test aggiornamento lista da proprietà raw`, async () => {
+  it(`Test aggiornamento lista da proprietà raw`, async function () {
     const page = await newSpecPage({
       components: [ZList, ZListItem],
       html: `<z-list></z-list>`,

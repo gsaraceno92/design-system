@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZInput } from './index';
 
-describe(`Suite test ZInput - checkbox`, () => {
-  it(`Test render ZInput vuoto`, async () => {
+describe(`Suite test ZInput - checkbox`, function () {
+  it(`Test render ZInput vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input htmlid="checkid" type="checkbox"></z-input>`,
@@ -22,7 +22,7 @@ describe(`Suite test ZInput - checkbox`, () => {
     `);
   });
 
-  it(`Test render ZInput with attributes`, async () => {
+  it(`Test render ZInput with attributes`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input htmlid="checkid" type="checkbox" name="name" value="value" label="checkbox label"></z-input>`,
@@ -42,7 +42,7 @@ describe(`Suite test ZInput - checkbox`, () => {
     `);
   });
 
-  it(`Test render ZInput checked`, async () => {
+  it(`Test render ZInput checked`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input htmlid="checkid" type="checkbox" checked></z-input>`,
@@ -61,7 +61,7 @@ describe(`Suite test ZInput - checkbox`, () => {
     `);
   });
 
-  it(`Test render ZInput label before`, async () => {
+  it(`Test render ZInput label before`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input htmlid="checkid" type="checkbox" labelafter="false"></z-input>`,
@@ -80,7 +80,7 @@ describe(`Suite test ZInput - checkbox`, () => {
     `);
   });
 
-  it(`Test render ZInput disabled`, async () => {
+  it(`Test render ZInput disabled`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input htmlid="checkid" type="checkbox" disabled></z-input>`,
@@ -99,7 +99,7 @@ describe(`Suite test ZInput - checkbox`, () => {
     `);
   });
 
-  it(`Test render ZInput readonly`, async () => {
+  it(`Test render ZInput readonly`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input htmlid="checkid" type="checkbox" readonly></z-input>`,

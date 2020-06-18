@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZMenuDropdown } from './index';
 
-describe(`Suite test ZMenuDropdown`, () => {
-  it(`Test render ZMenuDropdown vuoto`, async () => {
+describe(`Suite test ZMenuDropdown`, function () {
+  it(`Test render ZMenuDropdown vuoto`, async function () {
     expect(() => {
       newSpecPage({
         components: [ZMenuDropdown],
@@ -12,7 +12,7 @@ describe(`Suite test ZMenuDropdown`, () => {
     }).toThrowError;
   });
 
-  it(`Test  ZMenuDropdown con lista`, async () => {
+  it(`Test  ZMenuDropdown con lista`, async function () {
     const page = await newSpecPage({
       components: [ZMenuDropdown],
       html: `<z-menu-dropdown menucontent='[{"label":"Profilo", "link":"http://www.zanichelli.it"},{"label":"Esci", "link":"http://www.google.it"}]' nomeutente="Dario docente"></z-menu-dropdown>`,
@@ -36,7 +36,7 @@ describe(`Suite test ZMenuDropdown`, () => {
     `);
   });
 
-  it(`Test ZMenuDropdown con lista on click`, async () => {
+  it(`Test ZMenuDropdown con lista on click`, async function () {
     const page = await newSpecPage({
       components: [ZMenuDropdown],
       html: `<z-menu-dropdown menucontent='[{"label":"Profilo", "link":"http://www.zanichelli.it"},{"label":"Esci", "link":"http://www.google.it"}]' nomeutente="Dario docente"></z-menu-dropdown>`,

@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZLogo } from './index';
 
-describe(`Suite test ZLogo`, () => {
-  it(`Test render ZLogo con svg`, async () => {
+describe(`Suite test ZLogo`, function () {
+  it(`Test render ZLogo con svg`, async function () {
     const page = await newSpecPage({
       components: [ZLogo],
       html: `<z-logo ></z-logo>`,
@@ -41,7 +41,7 @@ describe(`Suite test ZLogo`, () => {
     `);
   });
 
-  it(`Test render ZLogo con img alt`, async () => {
+  it(`Test render ZLogo con img alt`, async function () {
     const page = await newSpecPage({
       components: [ZLogo],
       html: `<z-logo imagealt="zlogo"></z-logo>`,
@@ -79,7 +79,7 @@ describe(`Suite test ZLogo`, () => {
     `);
   });
 
-  it(`Test render ZLogo con link`, async () => {
+  it(`Test render ZLogo con link`, async function () {
     const page = await newSpecPage({
       components: [ZLogo],
       html: `<z-logo link="http://www.zanichelli.it/"></z-logo>`,
@@ -119,7 +119,7 @@ describe(`Suite test ZLogo`, () => {
     `);
   });
 
-  it(`Test render ZLogo con link e targetblank`, async () => {
+  it(`Test render ZLogo con link e targetblank`, async function () {
     const page = await newSpecPage({
       components: [ZLogo],
       html: `<z-logo link="http://www.zanichelli.it/" targetblank></z-logo>`,

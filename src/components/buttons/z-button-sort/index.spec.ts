@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZButtonSort } from './index';
 
-describe(`Suite test ZButtonSort`, () => {
-  it(`Test render ZButtonSort vuoto`, async () => {
+describe(`Suite test ZButtonSort`, function () {
+  it(`Test render ZButtonSort vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZButtonSort],
       html: `<z-button-sort></z-button-sort>`,
@@ -21,7 +21,7 @@ describe(`Suite test ZButtonSort`, () => {
     `);
   });
 
-  it(`Test render ZButtonSort con prop`, async () => {
+  it(`Test render ZButtonSort con prop`, async function () {
     const page = await newSpecPage({
       components: [ZButtonSort],
       html: `<z-button-sort label="label" counter="5"></z-button-sort>`,
@@ -39,7 +39,7 @@ describe(`Suite test ZButtonSort`, () => {
     `);
   });
 
-  it(`Test render ZButtonSort selected`, async () => {
+  it(`Test render ZButtonSort selected`, async function () {
     const page = await newSpecPage({
       components: [ZButtonSort],
       html: `<z-button-sort></z-button-sort>`,
@@ -59,7 +59,7 @@ describe(`Suite test ZButtonSort`, () => {
     `);
   });
 
-  it(`Test render ZButtonSort sort`, async () => {
+  it(`Test render ZButtonSort sort`, async function () {
     const page = await newSpecPage({
       components: [ZButtonSort],
       html: `<z-button-sort></z-button-sort>`,
@@ -80,7 +80,7 @@ describe(`Suite test ZButtonSort`, () => {
     `);
   });
 
-  it(`Test click ZButtonSort`, async () => {
+  it(`Test click ZButtonSort`, async function () {
     const page = await newSpecPage({
       components: [ZButtonSort],
       html: `<z-button-sort></z-button-sort>`,

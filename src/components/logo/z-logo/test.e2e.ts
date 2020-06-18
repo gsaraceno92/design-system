@@ -1,7 +1,7 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-describe(`z-logo test end2end`, () => {
-  it(`Test that component exists`, async () => {
+describe(`z-logo test end2end`, function () {
+  it(`Test that component exists`, async function () {
     const page = await newE2EPage();
     await page.setContent(`<z-logo></z-logo>`);
     const el = await page.find(`z-logo`);
@@ -9,7 +9,7 @@ describe(`z-logo test end2end`, () => {
     expect(el.shadowRoot).not.toBeNull;
   });
 
-  it(`Test that "a href" is created`, async () => {
+  it(`Test that "a href" is created`, async function () {
     const page = await newE2EPage();
     await page.setContent(`<z-logo></z-logo>`);
     await page.$eval(`z-logo`, (elm: any) => {
@@ -21,7 +21,7 @@ describe(`z-logo test end2end`, () => {
     expect(el.getAttribute(`href`)).toBe(`https:\\www.zanichelli.it`);
   });
 
-  it(`Test that "a target blank" is created`, async () => {
+  it(`Test that "a target blank" is created`, async function () {
     const page = await newE2EPage();
     await page.setContent(`<z-logo></z-logo>`);
     await page.$eval(`z-logo`, (elm: any) => {

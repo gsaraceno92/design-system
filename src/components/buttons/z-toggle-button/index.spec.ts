@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZToggleButton } from './index';
 
-describe(`Suite test ZToggleButton`, () => {
-  it(`Test render ZToggleButton vuoto`, async () => {
+describe(`Suite test ZToggleButton`, function () {
+  it(`Test render ZToggleButton vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZToggleButton],
       html: `<z-toggle-button></z-toggle-button>`,
@@ -20,7 +20,7 @@ describe(`Suite test ZToggleButton`, () => {
     `);
   });
 
-  it(`Test render ZToggleButton con label`, async () => {
+  it(`Test render ZToggleButton con label`, async function () {
     const page = await newSpecPage({
       components: [ZToggleButton],
       html: `<z-toggle-button label="label"></z-toggle-button>`,
@@ -38,7 +38,7 @@ describe(`Suite test ZToggleButton`, () => {
     `);
   });
 
-  it(`Test render ZToggleButton disabled`, async () => {
+  it(`Test render ZToggleButton disabled`, async function () {
     const page = await newSpecPage({
       components: [ZToggleButton],
       html: `<z-toggle-button label="label" isdisabled="true"></z-toggle-button>`,
@@ -56,7 +56,7 @@ describe(`Suite test ZToggleButton`, () => {
     `);
   });
 
-  it(`Test render ZToggleButton avoidclick`, async () => {
+  it(`Test render ZToggleButton avoidclick`, async function () {
     const page = await newSpecPage({
       components: [ZToggleButton],
       html: `<z-toggle-button label="label" avoidclick="true"></z-toggle-button>`,
@@ -74,7 +74,7 @@ describe(`Suite test ZToggleButton`, () => {
     `);
   });
 
-  it(`Test click ZToggleButton`, async () => {
+  it(`Test click ZToggleButton`, async function () {
     const page = await newSpecPage({
       components: [ZToggleButton],
       html: `<z-toggle-button></z-toggle-button>`,
@@ -90,7 +90,7 @@ describe(`Suite test ZToggleButton`, () => {
     expect(page.rootInstance.isOpen).toEqual(false);
   });
 
-  it(`Test click ZToggleButton disabled`, async () => {
+  it(`Test click ZToggleButton disabled`, async function () {
     const page = await newSpecPage({
       components: [ZToggleButton],
       html: `<z-toggle-button isdisabled="true"></z-toggle-button>`,

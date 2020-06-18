@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZButton } from './index';
 
-describe(`Suite test ZButton`, () => {
-  it(`Test render ZButton`, async () => {
+describe(`Suite test ZButton`, function () {
+  it(`Test render ZButton`, async function () {
     const page = await newSpecPage({
       components: [ZButton],
       html: `<z-button></z-button>`,
@@ -19,7 +19,7 @@ describe(`Suite test ZButton`, () => {
     `);
   });
 
-  it(`Test render ZButton con contenuto`, async () => {
+  it(`Test render ZButton con contenuto`, async function () {
     const page = await newSpecPage({
       components: [ZButton],
       html: `<z-button>label</z-button>`,
@@ -36,7 +36,7 @@ describe(`Suite test ZButton`, () => {
     `);
   });
 
-  it(`Test render ZButton con icon`, async () => {
+  it(`Test render ZButton con icon`, async function () {
     const page = await newSpecPage({
       components: [ZButton],
       html: `<z-button icon="icon"></z-button>`,
@@ -53,7 +53,7 @@ describe(`Suite test ZButton`, () => {
     `);
   });
 
-  it(`Test render ZButton variant`, async () => {
+  it(`Test render ZButton variant`, async function () {
     const page = await newSpecPage({
       components: [ZButton],
       html: `<z-button variant="secondary"></z-button>`,
@@ -69,7 +69,7 @@ describe(`Suite test ZButton`, () => {
     `);
   });
 
-  it(`Test render ZButton small`, async () => {
+  it(`Test render ZButton small`, async function () {
     const page = await newSpecPage({
       components: [ZButton],
       html: `<z-button issmall="true"></z-button>`,
@@ -85,7 +85,7 @@ describe(`Suite test ZButton`, () => {
     `);
   });
 
-  it(`Test render ZButton disabled`, async () => {
+  it(`Test render ZButton disabled`, async function () {
     const page = await newSpecPage({
       components: [ZButton],
       html: `<z-button disabled></z-button>`,

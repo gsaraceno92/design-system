@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZInput } from './index';
 
-describe(`Suite test ZInput - textarea`, () => {
-  it(`Test render ZInput textarea`, async () => {
+describe(`Suite test ZInput - textarea`, function () {
+  it(`Test render ZInput textarea`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input hasmessage="false" type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label'></z-input>`,
@@ -24,7 +24,7 @@ describe(`Suite test ZInput - textarea`, () => {
     `);
   });
 
-  it(`Test render ZInput textarea disabled/readonly`, async () => {
+  it(`Test render ZInput textarea disabled/readonly`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input hasmessage="false" type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label' disabled readonly></z-input>`,
@@ -45,7 +45,7 @@ describe(`Suite test ZInput - textarea`, () => {
     `);
   });
 
-  it(`Test render ZInput textarea status/messages`, async () => {
+  it(`Test render ZInput textarea status/messages`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label' status='error' message='error message'></z-input>`,

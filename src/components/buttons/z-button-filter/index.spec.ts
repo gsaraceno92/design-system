@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZButtonFilter } from './index';
 
-describe(`Suite test ZButtonFilter`, () => {
-  it(`Test render ZButtonFilter vuoto`, async () => {
+describe(`Suite test ZButtonFilter`, function () {
+  it(`Test render ZButtonFilter vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZButtonFilter],
       html: `<z-button-filter filtername=""></z-button-filter>`,
@@ -20,7 +20,7 @@ describe(`Suite test ZButtonFilter`, () => {
     `);
   });
 
-  it(`Test render ZButtonFilter con label`, async () => {
+  it(`Test render ZButtonFilter con label`, async function () {
     const page = await newSpecPage({
       components: [ZButtonFilter],
       html: `<z-button-filter filtername="FILTRO"></z-button-filter>`,
@@ -37,7 +37,7 @@ describe(`Suite test ZButtonFilter`, () => {
     `);
   });
 
-  it(`Test render ZButtonFilter fixed`, async () => {
+  it(`Test render ZButtonFilter fixed`, async function () {
     const page = await newSpecPage({
       components: [ZButtonFilter],
       html: `<z-button-filter filtername="" isfixed></z-button-filter>`,

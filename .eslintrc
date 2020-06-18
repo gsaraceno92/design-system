@@ -4,10 +4,17 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
+  "plugins": [
+    "mocha", "jsx-a11y"
+  ],
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:mocha/recommended",
+    "plugin:@stencil/recommended"
+
   ],
   "rules": {
     "quotes": [

@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZModal } from './index';
 
-describe(`Suite test ZModal`, () => {
-  it(`Test render ZModal vuoto`, async () => {
+describe(`Suite test ZModal`, function () {
+  it(`Test render ZModal vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZModal],
       html: `<z-modal></z-modal>`,
@@ -29,7 +29,7 @@ describe(`Suite test ZModal`, () => {
     `);
   });
 
-  it(`Test render ZModal with props`, async () => {
+  it(`Test render ZModal with props`, async function () {
     const page = await newSpecPage({
       components: [ZModal],
       html: `<z-modal modalid="modal" modaltitle="title" modalsubtitle="subtitle"></z-modal>`,
@@ -57,7 +57,7 @@ describe(`Suite test ZModal`, () => {
     `);
   });
 
-  it(`Test render ZModal with slot`, async () => {
+  it(`Test render ZModal with slot`, async function () {
     const page = await newSpecPage({
       components: [ZModal],
       html: `<z-modal><div slot="modalContent">Contenuto dello <b>slot</b></div></z-modal>`,

@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZCardHeader } from './index';
 
-describe(`Suite test ZCardHeader`, () => {
-  it(`Test render ZCardHeader con titolo`, async () => {
+describe(`Suite test ZCardHeader`, function () {
+  it(`Test render ZCardHeader con titolo`, async function () {
     const page = await newSpecPage({
       components: [ZCardHeader],
       html: `<z-card-header titolo="titolo"></z-card-header>`,

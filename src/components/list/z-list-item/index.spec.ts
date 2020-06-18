@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZListItem } from './index';
 
-describe(`Suite test z-list-item`, () => {
-  it(`Empty list item with shadow dom`, async () => {
+describe(`Suite test z-list-item`, function () {
+  it(`Empty list item with shadow dom`, async function () {
     const page = await newSpecPage({
       components: [ZListItem],
       html: `<z-list-item></z-list-item>`,
@@ -22,7 +22,7 @@ describe(`Suite test z-list-item`, () => {
     `);
   });
 
-  it(`Text element`, async () => {
+  it(`Text element`, async function () {
     const page = await newSpecPage({
       components: [ZListItem],
       html: `<z-list-item text='testo'></z-list-item>`,
@@ -41,7 +41,7 @@ describe(`Suite test z-list-item`, () => {
     `);
   });
 
-  it(`Link element`, async () => {
+  it(`Link element`, async function () {
     const page = await newSpecPage({
       components: [ZListItem],
       html: `<z-list-item text='testo' link =='http://www.google.it'></z-list-item>`,
@@ -62,7 +62,7 @@ describe(`Suite test z-list-item`, () => {
     `);
   });
 
-  it(`Slot element`, async () => {
+  it(`Slot element`, async function () {
     const page = await newSpecPage({
       components: [ZListItem],
       html: `<z-list-item>z list inner content</z-list-item>`,

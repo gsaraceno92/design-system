@@ -1,6 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-it(`Test ZCardFooter should receive toggle event`, async () => {
+it(`Test ZCardFooter should receive toggle event`, async function () {
   const page = await newE2EPage();
 
   await page.setContent(`

@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZCombobox } from './index';
 
-describe(`Suite test ZCombobox`, () => {
-  it(`Test render ZCombobox chiusa`, async () => {
+describe(`Suite test ZCombobox`, function () {
+  it(`Test render ZCombobox chiusa`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox items='[]'></z-combobox>`,
@@ -24,7 +24,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox chiusa con attributi`, async () => {
+  it(`Test render ZCombobox chiusa con attributi`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox items='[]' inputid="combobox" label="label" isfixed></z-combobox>`,
@@ -48,7 +48,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox chiusa con attributi ed elemento selezionato`, async () => {
+  it(`Test render ZCombobox chiusa con attributi ed elemento selezionato`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox items='[{"id":"item_1","name":"primo elemento","checked":false},{"id":"item_2","name":"secondo elemento","checked":true}]' inputid="combobox" label="label"></z-combobox>`,
@@ -72,7 +72,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta vuota`, async () => {
+  it(`Test render ZCombobox aperta vuota`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox items='[]' noresultslabel='non ci sono risultati'></z-combobox>`,
@@ -96,7 +96,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta con elementi`, async () => {
+  it(`Test render ZCombobox aperta con elementi`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox inputid="combo" label="combo" items='[{"id":"item_1","name":"primo elemento","checked":false},{"id":"item_2","name":"secondo elemento","checked":true}]'></z-combobox>`,
@@ -127,7 +127,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta con ricerca`, async () => {
+  it(`Test render ZCombobox aperta con ricerca`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox inputid="combo" label="combo" hassearch=true searchlabel="cerca" searchplaceholder="placeholder" items='[{"id":"item_1","name":"primo elemento","checked":false},{"id":"item_2","name":"secondo elemento","checked":true}]'></z-combobox>`,
@@ -159,7 +159,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta con ricerca attiva e risultati`, async () => {
+  it(`Test render ZCombobox aperta con ricerca attiva e risultati`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox inputid="combo" label="combo" hassearch=true searchlabel="cerca" searchplaceholder="placeholder" closesearchtext="CHIUDI" items='[{"id":"item_1","name":"primo elemento","checked":false},{"id":"item_2","name":"secondo elemento","checked":true}]'></z-combobox>`,
@@ -193,7 +193,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta con ricerca attiva senza testo di chiusura della ricerca testuale`, async () => {
+  it(`Test render ZCombobox aperta con ricerca attiva senza testo di chiusura della ricerca testuale`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox inputid="combo" label="combo" hassearch=true searchlabel="cerca" searchplaceholder="placeholder" items='[{"id":"item_1","name":"primo elemento","checked":false},{"id":"item_2","name":"secondo elemento","checked":true}]'></z-combobox>`,
@@ -227,7 +227,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta con ricerca attiva senza risultati`, async () => {
+  it(`Test render ZCombobox aperta con ricerca attiva senza risultati`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox inputid="combo" label="combo" hassearch=true searchlabel="cerca" searchplaceholder="placeholder" closesearchtext="CHIUDI" items='[{"id":"item_1","name":"primo elemento","checked":false},{"id":"item_2","name":"secondo elemento","checked":true}]' noresultslabel='non ci sono risultati'></z-combobox>`,
@@ -259,7 +259,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta con check all`, async () => {
+  it(`Test render ZCombobox aperta con check all`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox inputid="combo" label="combo" hascheckall="true" checkalltext="CHECK" uncheckalltext="UNCHECK" items='[{"id":"item_1","name":"primo elemento","checked":false},{"id":"item_2","name":"secondo elemento","checked":true}]'></z-combobox>`,
@@ -293,7 +293,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta con uncheck all`, async () => {
+  it(`Test render ZCombobox aperta con uncheck all`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox inputid="combo" label="combo" hascheckall="true" checkalltext="CHECK" uncheckalltext="UNCHECK" items='[{"id":"item_1","name":"primo elemento","checked":true},{"id":"item_2","name":"secondo elemento","checked":true}]'></z-combobox>`,
@@ -327,7 +327,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta con max checkable items`, async () => {
+  it(`Test render ZCombobox aperta con max checkable items`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox inputid="combo" label="combo" maxcheckableitems="1" items='[{"id":"item_1","name":"primo elemento","checked":false},{"id":"item_2","name":"secondo elemento","checked":true}]'></z-combobox>`,
@@ -358,7 +358,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta con maxcheckableitems + check all`, async () => {
+  it(`Test render ZCombobox aperta con maxcheckableitems + check all`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox inputid="combo" label="combo" maxcheckableitems="3" hascheckall="true" checkalltext="CHECK" uncheckalltext="UNCHECK" items='[{"id":"item_1","name":"primo elemento","checked":true},{"id":"item_2","name":"secondo elemento","checked":false}]'></z-combobox>`,
@@ -392,7 +392,7 @@ describe(`Suite test ZCombobox`, () => {
     `);
   });
 
-  it(`Test render ZCombobox aperta con maxcheckableitems + check all (disabled)`, async () => {
+  it(`Test render ZCombobox aperta con maxcheckableitems + check all (disabled)`, async function () {
     const page = await newSpecPage({
       components: [ZCombobox],
       html: `<z-combobox inputid="combo" label="combo" maxcheckableitems="1" hascheckall="true" checkalltext="CHECK" uncheckalltext="UNCHECK" items='[{"id":"item_1","name":"primo elemento","checked":true},{"id":"item_2","name":"secondo elemento","checked":false}]'></z-combobox>`,

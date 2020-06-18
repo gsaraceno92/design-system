@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZCardBody } from './index';
 
-describe(`Suite test ZCardBody`, () => {
-  it(`Test render ZCardBody vuoto`, async () => {
+describe(`Suite test ZCardBody`, function () {
+  it(`Test render ZCardBody vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZCardBody],
       html: `<z-card-body></z-card-body>`,

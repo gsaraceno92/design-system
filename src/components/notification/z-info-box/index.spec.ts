@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZInfoBox } from './index';
 
-describe(`Suite test ZInfoBox`, () => {
-  it(`Test render ZInfoBox vuoto`, async () => {
+describe(`Suite test ZInfoBox`, function () {
+  it(`Test render ZInfoBox vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZInfoBox],
       html: `<z-info-box></z-info-box>`,
@@ -21,7 +21,7 @@ describe(`Suite test ZInfoBox`, () => {
     `);
   });
 
-  it(`Test render ZInfoBox con props`, async () => {
+  it(`Test render ZInfoBox con props`, async function () {
     const page = await newSpecPage({
       components: [ZInfoBox],
       html: `<z-info-box boxid="box" isclosable="true"></z-info-box>`,
@@ -39,7 +39,7 @@ describe(`Suite test ZInfoBox`, () => {
     `);
   });
 
-  it(`Test render ZInfoBox non closable`, async () => {
+  it(`Test render ZInfoBox non closable`, async function () {
     const page = await newSpecPage({
       components: [ZInfoBox],
       html: `<z-info-box boxid="box" isclosable="false"></z-info-box>`,
@@ -56,7 +56,7 @@ describe(`Suite test ZInfoBox`, () => {
     `);
   });
 
-  it(`Test render ZInfoBox con content`, async () => {
+  it(`Test render ZInfoBox con content`, async function () {
     const page = await newSpecPage({
       components: [ZInfoBox],
       html: `<z-info-box boxid="box">

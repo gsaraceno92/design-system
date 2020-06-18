@@ -1,6 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-it(`Test ZInput should emit inputChange event`, async () => {
+it(`Test ZInput should emit inputChange event`, async function () {
   const page = await newE2EPage();
 
   // Define a window.onCustomEvent function on the page.
@@ -31,7 +31,7 @@ it(`Test ZInput should emit inputChange event`, async () => {
   expect(inputValue).toEqual(`AB`);
 });
 
-it(`Test disabled ZInput should not change / emit inputChange event`, async () => {
+it(`Test disabled ZInput should not change / emit inputChange event`, async function () {
   const page = await newE2EPage();
 
   // Define a window.onCustomEvent function on the page.
@@ -62,7 +62,7 @@ it(`Test disabled ZInput should not change / emit inputChange event`, async () =
   expect(inputValue).toEqual(``);
 });
 
-it(`Test ZInput typing state`, async () => {
+it(`Test ZInput typing state`, async function () {
   const page = await newE2EPage();
 
   await page.setContent(`<z-input typingtimeout="1000"></z-input>`);
@@ -79,7 +79,7 @@ it(`Test ZInput typing state`, async () => {
   expect(input).not.toHaveClass(`istyping`);
 });
 
-it(`Test ZInput should emit inputCheck event`, async () => {
+it(`Test ZInput should emit inputCheck event`, async function () {
   const page = await newE2EPage();
 
   // Define a window.onCustomEvent function on the page.
@@ -113,7 +113,7 @@ it(`Test ZInput should emit inputCheck event`, async () => {
   expect(checked).toEqual(false);
 });
 
-it(`Test disabled ZInput should not emit inputCheck event`, async () => {
+it(`Test disabled ZInput should not emit inputCheck event`, async function () {
   const page = await newE2EPage();
 
   // Define a window.onCustomEvent function on the page.
@@ -141,7 +141,7 @@ it(`Test disabled ZInput should not emit inputCheck event`, async () => {
   expect(checked).toEqual(false);
 });
 
-it(`Test ZInput - select should open, close and emit optionSelect event`, async () => {
+it(`Test ZInput - select should open, close and emit optionSelect event`, async function () {
   const page = await newE2EPage();
   // Define a window.onCustomEvent function on the page.
   let selected = null;

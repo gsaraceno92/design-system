@@ -4,8 +4,8 @@ import { ZIcon } from '../../icons/z-icon';
 
 import { ZInput } from './index';
 
-describe(`Suite test ZInput - text`, () => {
-  it(`Test render ZInput vuoto`, async () => {
+describe(`Suite test ZInput - text`, function () {
+  it(`Test render ZInput vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input hasmessage="false" htmlid="id"></z-input>`,
@@ -23,7 +23,7 @@ describe(`Suite test ZInput - text`, () => {
     `);
   });
 
-  it(`Test render ZInput con attributi`, async () => {
+  it(`Test render ZInput con attributi`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label'></z-input>`,
@@ -43,7 +43,7 @@ describe(`Suite test ZInput - text`, () => {
     `);
   });
 
-  it(`Test render ZInput con attributi disabled`, async () => {
+  it(`Test render ZInput con attributi disabled`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label' disabled></z-input>`,
@@ -62,7 +62,7 @@ describe(`Suite test ZInput - text`, () => {
     `);
   });
 
-  it(`Test render ZInput con attributi readonly`, async () => {
+  it(`Test render ZInput con attributi readonly`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label' readonly></z-input>`,
@@ -81,7 +81,7 @@ describe(`Suite test ZInput - text`, () => {
     `);
   });
 
-  it(`Test render ZInput con helper message`, async () => {
+  it(`Test render ZInput con helper message`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label' message='helper message'></z-input>`,
@@ -104,7 +104,7 @@ describe(`Suite test ZInput - text`, () => {
     `);
   });
 
-  it(`Test render ZInput con status e message`, async () => {
+  it(`Test render ZInput con status e message`, async function () {
     const page = await newSpecPage({
       components: [ZInput],
       html: `<z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label' status='success' message='success message'></z-input>`,
@@ -128,7 +128,7 @@ describe(`Suite test ZInput - text`, () => {
     `);
   });
 
-  it(`Test ZInput clear`, async () => {
+  it(`Test ZInput clear`, async function () {
     const page = await newSpecPage({
       components: [ZInput, ZIcon],
       html: `<z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label'></z-input>`,

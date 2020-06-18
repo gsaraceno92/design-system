@@ -1,6 +1,6 @@
 import { ZInput } from './index';
 
-it(`getValue() should return input value`, async () => {
+it(`getValue() should return input value`, async function () {
   const input = new ZInput();
   input.value = `input value`;
 
@@ -8,7 +8,7 @@ it(`getValue() should return input value`, async () => {
   expect(value).toBe(`input value`);
 });
 
-it(`setValue() should set input value`, async () => {
+it(`setValue() should set input value`, async function () {
   const input = new ZInput();
   input.value = `input value`;
 
@@ -16,7 +16,7 @@ it(`setValue() should set input value`, async () => {
   expect(input.value).toBe(`new input value`);
 });
 
-it(`isChecked() should return checked state`, async () => {
+it(`isChecked() should return checked state`, async function () {
   const input = new ZInput();
   input.type = `checkbox`;
 

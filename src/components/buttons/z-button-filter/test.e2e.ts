@@ -1,6 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-it(`Test ZButtonFilter should emit removefilter event`, async () => {
+it(`Test ZButtonFilter should emit removefilter event`, async function () {
   const page = await newE2EPage();
 
   // Define a window.onCustomEvent function on the page.
@@ -28,7 +28,7 @@ it(`Test ZButtonFilter should emit removefilter event`, async () => {
   expect(removefilterCounter).toEqual(1);
 });
 
-it(`Test ZButtonFilter fixed button should not emit removefilter event`, async () => {
+it(`Test ZButtonFilter fixed button should not emit removefilter event`, async function () {
   const page = await newE2EPage();
 
   // Define a window.onCustomEvent function on the page.

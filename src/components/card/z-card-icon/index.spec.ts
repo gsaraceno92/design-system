@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZCardIcon } from './index';
 
-describe(`Suite test ZCardIcon`, () => {
-  it(`Test render ZCardIcon vuoto`, async () => {
+describe(`Suite test ZCardIcon`, function () {
+  it(`Test render ZCardIcon vuoto`, async function () {
     const page = await newSpecPage({
       components: [ZCardIcon],
       html: `<z-card-icon icon="icon"></z-card-icon>`,
@@ -22,7 +22,7 @@ describe(`Suite test ZCardIcon`, () => {
     `);
   });
 
-  it(`Test render ZCardIcon disabled`, async () => {
+  it(`Test render ZCardIcon disabled`, async function () {
     const page = await newSpecPage({
       components: [ZCardIcon],
       html: `<z-card-icon icon="icon" isdisabled></z-card-icon>`,

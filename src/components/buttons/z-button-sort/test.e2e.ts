@@ -1,6 +1,6 @@
 import { newE2EPage } from '@stencil/core/testing';
 
-it(`Test ZButtonSort should emit buttonSortClick event`, async () => {
+it(`Test ZButtonSort should emit buttonSortClick event`, async function () {
   const page = await newE2EPage();
 
   // Define a window.onCustomEvent function on the page.

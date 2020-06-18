@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZCardAlert } from './index';
 
-describe(`Suite test ZCardAlert`, () => {
-  it(`Test render ZCardAlert add`, async () => {
+describe(`Suite test ZCardAlert`, function () {
+  it(`Test render ZCardAlert add`, async function () {
     const page = await newSpecPage({
       components: [ZCardAlert],
       html: `<z-card-alert slot="alert" iconName="circle-check" contenttext="Libro aggiunto ai miei libri" actiontext="Annulla" type="add"></z-card-alert>`,
@@ -26,7 +26,7 @@ describe(`Suite test ZCardAlert`, () => {
     `);
   });
 
-  it(`Test render ZCardAlert add no undo`, async () => {
+  it(`Test render ZCardAlert add no undo`, async function () {
     const page = await newSpecPage({
       components: [ZCardAlert],
       html: `<z-card-alert slot="alert" iconName="circle-check" contenttext="Libro aggiunto ai miei libri" type="add"></z-card-alert>`,
@@ -46,7 +46,7 @@ describe(`Suite test ZCardAlert`, () => {
     `);
   });
 
-  it(`Test render ZCardAlert remove`, async () => {
+  it(`Test render ZCardAlert remove`, async function () {
     const page = await newSpecPage({
       components: [ZCardAlert],
       html: `<z-card-alert slot="alert" iconName="circle-check" contenttext="Libro rimosso dai tuoi libri" actiontext="Annulla" type="remove"></z-card-alert>`,
@@ -69,7 +69,7 @@ describe(`Suite test ZCardAlert`, () => {
     `);
   });
 
-  it(`Test render ZCardAlert remove no undo`, async () => {
+  it(`Test render ZCardAlert remove no undo`, async function () {
     const page = await newSpecPage({
       components: [ZCardAlert],
       html: `<z-card-alert slot="alert" iconName="circle-check" contenttext="Libro rimosso dai tuoi libri" type="remove"></z-card-alert>`,

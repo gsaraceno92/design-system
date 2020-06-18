@@ -2,8 +2,8 @@ import { newSpecPage } from '@stencil/core/testing';
 
 import { ZChip } from './index';
 
-describe(`Suite test ZChip`, () => {
-  it(`Test render ZChip empty`, async () => {
+describe(`Suite test ZChip`, function () {
+  it(`Test render ZChip empty`, async function () {
     const page = await newSpecPage({
       components: [ZChip],
       html: `<z-chip></z-chip>`,
@@ -20,7 +20,7 @@ describe(`Suite test ZChip`, () => {
     `);
   });
 
-  it(`Test render ZChip with values`, async () => {
+  it(`Test render ZChip with values`, async function () {
     const page = await newSpecPage({
       components: [ZChip],
       html: `<z-chip boldtext="20" regulartext="libri trovati"></z-chip>`,
