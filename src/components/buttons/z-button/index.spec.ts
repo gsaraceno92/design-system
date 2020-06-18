@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZButton } from "./index";
+import { ZButton } from './index';
 
-describe("Suite test ZButton", () => {
-  it("Test render ZButton", async () => {
+describe(`Suite test ZButton`, () => {
+  it(`Test render ZButton`, async () => {
     const page = await newSpecPage({
       components: [ZButton],
-      html: `<z-button></z-button>`
+      html: `<z-button></z-button>`,
     });
     expect(page.root).toEqualHtml(`
       <z-button style="pointer-events: auto;">
@@ -19,10 +19,10 @@ describe("Suite test ZButton", () => {
     `);
   });
 
-  it("Test render ZButton con contenuto", async () => {
+  it(`Test render ZButton con contenuto`, async () => {
     const page = await newSpecPage({
       components: [ZButton],
-      html: `<z-button>label</z-button>`
+      html: `<z-button>label</z-button>`,
     });
     expect(page.root).toEqualHtml(`
       <z-button style="pointer-events: auto;">
@@ -36,10 +36,10 @@ describe("Suite test ZButton", () => {
     `);
   });
 
-  it("Test render ZButton con icon", async () => {
+  it(`Test render ZButton con icon`, async () => {
     const page = await newSpecPage({
       components: [ZButton],
-      html: `<z-button icon="icon"></z-button>`
+      html: `<z-button icon="icon"></z-button>`,
     });
     expect(page.root).toEqualHtml(`
       <z-button style="pointer-events: auto;" icon="icon">
@@ -53,10 +53,10 @@ describe("Suite test ZButton", () => {
     `);
   });
 
-  it("Test render ZButton variant", async () => {
+  it(`Test render ZButton variant`, async () => {
     const page = await newSpecPage({
       components: [ZButton],
-      html: `<z-button variant="secondary"></z-button>`
+      html: `<z-button variant="secondary"></z-button>`,
     });
     expect(page.root).toEqualHtml(`
       <z-button style="pointer-events: auto;" variant="secondary">
@@ -69,10 +69,10 @@ describe("Suite test ZButton", () => {
     `);
   });
 
-  it("Test render ZButton small", async () => {
+  it(`Test render ZButton small`, async () => {
     const page = await newSpecPage({
       components: [ZButton],
-      html: `<z-button issmall="true"></z-button>`
+      html: `<z-button issmall="true"></z-button>`,
     });
     expect(page.root).toEqualHtml(`
       <z-button style="pointer-events: auto;" issmall="true">
@@ -85,10 +85,10 @@ describe("Suite test ZButton", () => {
     `);
   });
 
-  it("Test render ZButton disabled", async () => {
+  it(`Test render ZButton disabled`, async () => {
     const page = await newSpecPage({
       components: [ZButton],
-      html: `<z-button disabled></z-button>`
+      html: `<z-button disabled></z-button>`,
     });
     expect(page.root).toEqualHtml(`
       <z-button disabled  style="pointer-events: none;">

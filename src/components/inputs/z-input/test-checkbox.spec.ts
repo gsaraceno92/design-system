@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZInput } from "./index";
+import { ZInput } from './index';
 
-describe("Suite test ZInput - checkbox", () => {
-  it("Test render ZInput vuoto", async () => {
+describe(`Suite test ZInput - checkbox`, () => {
+  it(`Test render ZInput vuoto`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input htmlid="checkid" type="checkbox"></z-input>`
+      html: `<z-input htmlid="checkid" type="checkbox"></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input htmlid="checkid" type="checkbox">
@@ -22,10 +22,10 @@ describe("Suite test ZInput - checkbox", () => {
     `);
   });
 
-  it("Test render ZInput with attributes", async () => {
+  it(`Test render ZInput with attributes`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input htmlid="checkid" type="checkbox" name="name" value="value" label="checkbox label"></z-input>`
+      html: `<z-input htmlid="checkid" type="checkbox" name="name" value="value" label="checkbox label"></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input htmlid="checkid" type="checkbox" name="name" value="value" label="checkbox label">
@@ -42,10 +42,10 @@ describe("Suite test ZInput - checkbox", () => {
     `);
   });
 
-  it("Test render ZInput checked", async () => {
+  it(`Test render ZInput checked`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input htmlid="checkid" type="checkbox" checked></z-input>`
+      html: `<z-input htmlid="checkid" type="checkbox" checked></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input htmlid="checkid" type="checkbox" checked>
@@ -61,10 +61,10 @@ describe("Suite test ZInput - checkbox", () => {
     `);
   });
 
-  it("Test render ZInput label before", async () => {
+  it(`Test render ZInput label before`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input htmlid="checkid" type="checkbox" labelafter="false"></z-input>`
+      html: `<z-input htmlid="checkid" type="checkbox" labelafter="false"></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input htmlid="checkid" type="checkbox" labelafter="false">
@@ -80,10 +80,10 @@ describe("Suite test ZInput - checkbox", () => {
     `);
   });
 
-  it("Test render ZInput disabled", async () => {
+  it(`Test render ZInput disabled`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input htmlid="checkid" type="checkbox" disabled></z-input>`
+      html: `<z-input htmlid="checkid" type="checkbox" disabled></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input htmlid="checkid" type="checkbox" disabled>
@@ -99,10 +99,10 @@ describe("Suite test ZInput - checkbox", () => {
     `);
   });
 
-  it("Test render ZInput readonly", async () => {
+  it(`Test render ZInput readonly`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input htmlid="checkid" type="checkbox" readonly></z-input>`
+      html: `<z-input htmlid="checkid" type="checkbox" readonly></z-input>`,
     });
     expect(page.root).toEqualHtml(`
         <z-input htmlid="checkid" type="checkbox" readonly>

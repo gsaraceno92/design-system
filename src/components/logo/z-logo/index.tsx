@@ -1,15 +1,15 @@
-import { Component, Prop, h } from "@stencil/core";
+import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: "z-logo",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-logo`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZLogo {
   /** image width */
-  @Prop() width: number = 163;
+  @Prop() width = 163;
   /** image height */
-  @Prop() height: number = 42;
+  @Prop() height = 42;
   /** alternative image text */
   @Prop() imagealt?: string;
   /** link url (optional) */
@@ -19,11 +19,7 @@ export class ZLogo {
 
   renderSvg() {
     return (
-      <svg
-        width={`${this.width}px`}
-        height={`${this.height}px`}
-        viewBox="0 0 163 42"
-      >
+      <svg width={`${this.width}px`} height={`${this.height}px`} viewBox="0 0 163 42">
         <title>{this.imagealt}</title>
         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g transform="translate(-663.000000, -534.000000)">
@@ -48,7 +44,7 @@ export class ZLogo {
     return (
       <div>
         {this.link && (
-          <a href={this.link} target={this.targetblank ? "_blank" : undefined}>
+          <a href={this.link} target={this.targetblank ? `_blank` : undefined}>
             {this.renderSvg()}
           </a>
         )}

@@ -38,12 +38,13 @@
 }
 
 ::-webkit-scrollbar {
-  background: linear-gradient(
-    90deg,
-    var(--bg-white) 2px,
-    var(--bg-grey-200) 4px,
-    var(--bg-white) 8px
-  );
+  background:
+    linear-gradient(
+      90deg,
+      var(--bg-white) 2px,
+      var(--bg-grey-200) 4px,
+      var(--bg-white) 8px
+    );
   border-radius: var(--radius-base);
   width: 10px;
   margin-right: 20px;

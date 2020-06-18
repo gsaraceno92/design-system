@@ -129,7 +129,7 @@ z-logo {
   z-index: inherit;
   height: 52px;
   position: fixed;
-  top: 0px;
+  top: 0;
   left: 0;
   z-index: 999;
 }
@@ -155,7 +155,7 @@ z-logo {
   top: 52px;
   left: 0;
   z-index: 999;
-  max-height: 0px;
+  max-height: 0;
   overflow: hidden;
   transition: max-height 1s cubic-bezier(0.46, 0, 1, 0.79);
 }
@@ -173,7 +173,7 @@ hr {
   display: block;
   position: relative;
   padding: 0;
-  margin: 0px var(--basex4);
+  margin: 0 var(--basex4);
   height: 0;
   width: calc(100% - 64px);
   max-height: 0;
@@ -276,7 +276,7 @@ hr {
   justify-content: center;
   align-items: center;
   align-content: center;
-  padding: var(--basex2) 0px var(--basex4) 0px;
+  padding: var(--basex2) 0 var(--basex4) 0;
 }
 
 .link-ext {
@@ -300,8 +300,8 @@ hr {
   width: 100%;
   margin: var(--half-x1) auto;
   box-sizing: border-box;
-  margin: 0px auto 0px auto;
-  padding: 0px var(--basex4) 0px var(--basex4);
+  margin: 0 auto 0 auto;
+  padding: 0 var(--basex4) 0 var(--basex4);
   line-height: 44px;
 }
 
@@ -357,14 +357,14 @@ hr {
   align-content: stretch;
   width: 100%;
   box-sizing: border-box;
-  margin: 0px auto 0px auto;
-  padding: 0px var(--basex4) 0px var(--basex4);
+  margin: 0 auto 0 auto;
+  padding: 0 var(--basex4) 0 var(--basex4);
   line-height: 44px;
 }
 
 .link-int > span > .menu-item:hover,
 .link-int > span > .menu-item:focus {
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .link-int > span > .menu-item > span {
@@ -428,8 +428,8 @@ hr {
   align-content: stretch;
   width: 100%;
   box-sizing: border-box;
-  margin: 0px auto 0px auto;
-  padding: 0px var(--basex4) 0px var(--basex4);
+  margin: 0 auto 0 auto;
+  padding: 0 var(--basex4) 0 var(--basex4);
   line-height: 44px;
 }
 
@@ -485,10 +485,10 @@ hr {
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
-  margin: 0px auto 0px auto;
-  padding: 0px var(--basex4) 0px var(--basex4);
+  margin: 0 auto 0 auto;
+  padding: 0 var(--basex4) 0 var(--basex4);
   line-height: 44px;
-  max-height: 0px;
+  max-height: 0;
   transition: max-height 0.3s ease;
 }
 
@@ -507,7 +507,7 @@ hr {
   }
 
   header.myz-out {
-    top: 0px;
+    top: 0;
     grid-template-rows: 1fr;
   }
 

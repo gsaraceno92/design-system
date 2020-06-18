@@ -1,9 +1,9 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZMenuDropdown } from "./index";
+import { ZMenuDropdown } from './index';
 
-describe("Suite test ZMenuDropdown", () => {
-  it("Test render ZMenuDropdown vuoto", async () => {
+describe(`Suite test ZMenuDropdown`, () => {
+  it(`Test render ZMenuDropdown vuoto`, async () => {
     expect(() => {
       newSpecPage({
         components: [ZMenuDropdown],
@@ -12,7 +12,7 @@ describe("Suite test ZMenuDropdown", () => {
     }).toThrowError;
   });
 
-  it("Test  ZMenuDropdown con lista", async () => {
+  it(`Test  ZMenuDropdown con lista`, async () => {
     const page = await newSpecPage({
       components: [ZMenuDropdown],
       html: `<z-menu-dropdown menucontent='[{"label":"Profilo", "link":"http://www.zanichelli.it"},{"label":"Esci", "link":"http://www.google.it"}]' nomeutente="Dario docente"></z-menu-dropdown>`,
@@ -36,7 +36,7 @@ describe("Suite test ZMenuDropdown", () => {
     `);
   });
 
-  it("Test ZMenuDropdown con lista on click", async () => {
+  it(`Test ZMenuDropdown con lista on click`, async () => {
     const page = await newSpecPage({
       components: [ZMenuDropdown],
       html: `<z-menu-dropdown menucontent='[{"label":"Profilo", "link":"http://www.zanichelli.it"},{"label":"Esci", "link":"http://www.google.it"}]' nomeutente="Dario docente"></z-menu-dropdown>`,
@@ -59,10 +59,10 @@ describe("Suite test ZMenuDropdown", () => {
   </z-menu-dropdown>`);
     expect(page.rootInstance.ismenuopen).toBeFalsy;
 
-    let image = page.root.shadowRoot
-      .querySelector("a")
-      .querySelector("div")
-      .querySelector("span.arrow");
+    const image = page.root.shadowRoot
+      .querySelector(`a`)
+      .querySelector(`div`)
+      .querySelector(`span.arrow`);
     image.click();
     await page.waitForChanges();
 

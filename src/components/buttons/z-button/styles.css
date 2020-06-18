@@ -8,7 +8,7 @@ button {
   border-radius: var(--radius-base);
   height: 44px;
   text-transform: uppercase;
-  padding: 0px var(--basex2);
+  padding: 0 var(--basex2);
   cursor: pointer;
   white-space: nowrap;
   outline: none;
@@ -42,7 +42,7 @@ button.primary:focus {
   border-color: var(--myz-blue);
   color: var(--bg-white);
   fill: var(--bg-white);
-  box-shadow: 0px 0px 2px 2px var(--accent-dark);
+  box-shadow: 0 0 2px 2px var(--accent-dark);
 }
 
 button.primary:active {
@@ -50,7 +50,7 @@ button.primary:active {
   border-color: var(--myz-blue-light);
   color: var(--bg-white);
   fill: var(--bg-white);
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* INFO: mantenere il selettore disabled per ultimo in modo che sia prioritario rispetto agli altri */
@@ -80,7 +80,7 @@ button.secondary:focus {
   border-color: var(--myz-blue);
   color: var(--myz-blue);
   fill: var(--myz-blue);
-  box-shadow: 0px 0px 2px 2px var(--accent-dark);
+  box-shadow: 0 0 2px 2px var(--accent-dark);
 }
 
 button.secondary:active {
@@ -88,7 +88,7 @@ button.secondary:active {
   border-color: var(--myz-blue-light);
   color: var(--myz-blue-light);
   fill: var(--myz-blue-light);
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* INFO: mantenere il selettore disabled per ultimo in modo che sia prioritario rispetto agli altri */
@@ -118,7 +118,7 @@ button.tertiary:focus {
   border-color: var(--bg-white);
   color: var(--myz-blue);
   fill: var(--myz-blue);
-  box-shadow: 0px 0px 2px 2px var(--accent-dark);
+  box-shadow: 0 0 2px 2px var(--accent-dark);
 }
 
 button.tertiary:active {
@@ -126,7 +126,7 @@ button.tertiary:active {
   border-color: var(--bg-white);
   color: var(--myz-blue-light);
   fill: var(--myz-blue-light);
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 /* INFO: mantenere il selettore disabled per ultimo in modo che sia prioritario rispetto agli altri */

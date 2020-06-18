@@ -1,10 +1,10 @@
-import { Component, Prop, h } from "@stencil/core";
-import { ActionBean } from "../../../beans";
+import { Component, Prop, h } from '@stencil/core';
+import { ActionBean } from '../../../beans';
 
 @Component({
-  tag: "z-card-list",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-card-list`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZCardList {
   /** list data stringified array */
@@ -17,7 +17,7 @@ export class ZCardList {
   handleSpaceKeyPress(e: KeyboardEvent, url: string): void {
     if (e.keyCode == 32 || e.keyCode == 13) {
       e.preventDefault();
-      window.open(url, "_blank");
+      window.open(url, `_blank`);
     }
   }
 

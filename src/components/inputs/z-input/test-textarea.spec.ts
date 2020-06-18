@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZInput } from "./index";
+import { ZInput } from './index';
 
-describe("Suite test ZInput - textarea", () => {
-  it("Test render ZInput textarea", async () => {
+describe(`Suite test ZInput - textarea`, () => {
+  it(`Test render ZInput textarea`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label'></z-input>`
+      html: `<z-input hasmessage="false" type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label'></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input hasmessage="false" type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label'>
@@ -24,10 +24,10 @@ describe("Suite test ZInput - textarea", () => {
     `);
   });
 
-  it("Test render ZInput textarea disabled/readonly", async () => {
+  it(`Test render ZInput textarea disabled/readonly`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label' disabled readonly></z-input>`
+      html: `<z-input hasmessage="false" type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label' disabled readonly></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input hasmessage="false" type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label' disabled readonly>
@@ -45,10 +45,10 @@ describe("Suite test ZInput - textarea", () => {
     `);
   });
 
-  it("Test render ZInput textarea status/messages", async () => {
+  it(`Test render ZInput textarea status/messages`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label' status='error' message='error message'></z-input>`
+      html: `<z-input type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label' status='error' message='error message'></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input type='textarea' htmlid='test' placeholder='placeholder' value='value' label='label' status='error' message='error message'>

@@ -7,26 +7,26 @@ import {
   Event,
   EventEmitter,
   Watch,
-  Element
-} from "@stencil/core";
+  Element,
+} from '@stencil/core';
 import {
   InputTypeBean,
   InputTypeEnum,
   InputStatusBean,
   SelectItemBean,
-  keybordKeyCodeEnum
-} from "../../../beans";
+  keybordKeyCodeEnum,
+} from '../../../beans';
 import {
   randomId,
   handleKeyboardSubmit,
   getClickedElement,
-  getElementTree
-} from "../../../utils/utils";
+  getElementTree,
+} from '../../../utils/utils';
 
 @Component({
-  tag: "z-input",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-input`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZInput {
   @Element() hostElement: HTMLElement;
@@ -64,15 +64,15 @@ export class ZInput {
   /** items: available for select */
   @Prop() items?: SelectItemBean[] | string;
 
-  @State() isTyping: boolean = false;
-  @State() textareaWrapperHover: string = "";
-  @State() textareaWrapperFocus: string = "";
-  @State() isOpen: boolean = false;
+  @State() isTyping = false;
+  @State() textareaWrapperHover = ``;
+  @State() textareaWrapperFocus = ``;
+  @State() isOpen = false;
 
   private statusIcons = {
-    success: "circle-check",
-    error: "circle-cross-stroke",
-    warning: "circle-warning"
+    success: `circle-check`,
+    error: `circle-cross-stroke`,
+    warning: `circle-warning`,
   };
   private timer;
   private itemsList: SelectItemBean[] = [];
@@ -84,13 +84,10 @@ export class ZInput {
     this.handleSelectFocus = this.handleSelectFocus.bind(this);
   }
 
-  @Watch("items")
+  @Watch(`items`)
   watchItems() {
-    this.itemsList =
-      typeof this.items === "string" ? JSON.parse(this.items) : this.items;
-    this.selectedItem = this.itemsList.find(
-      (item: SelectItemBean) => item.selected
-    );
+    this.itemsList = typeof this.items === `string` ? JSON.parse(this.items) : this.items;
+    this.selectedItem = this.itemsList.find((item: SelectItemBean) => item.selected);
     if (this.selectedItem) {
       this.value = this.selectedItem.id;
     }
@@ -181,11 +178,11 @@ export class ZInput {
       readonly: this.readonly,
       title: this.htmltitle,
       class: `
-        ${this.status ? "input_" + this.status : "input_default"}
-        ${this.isTyping && "istyping"}
-        ${!this.isTyping && this.value && "filled"}
+        ${this.status ? `input_` + this.status : `input_default`}
+        ${this.isTyping && `istyping`}
+        ${!this.isTyping && this.value && `filled`}
       `,
-      onInput: (e: any) => this.emitInputChange(e.target.value, e.keyCode)
+      onInput: (e: any) => this.emitInputChange(e.target.value, e.keyCode),
     };
   }
 
@@ -213,7 +210,7 @@ export class ZInput {
     return (
       <label
         htmlFor={this.htmlid}
-        class={this.disabled && "disabledLabel"}
+        class={this.disabled && `disabledLabel`}
         {...attributes}
       >
         {this.label}
@@ -225,10 +222,7 @@ export class ZInput {
     if (!this.value || this.disabled || this.readonly) return;
 
     return (
-      <z-icon
-        name="close"
-        onClick={(e: any) => this.emitInputChange("", e.keyCode)}
-      />
+      <z-icon name="close" onClick={(e: any) => this.emitInputChange(``, e.keyCode)} />
     );
   }
 
@@ -267,9 +261,9 @@ export class ZInput {
         class={`
             textareaWrapper
             ${attributes.class}
-            ${attributes.disabled && " disabled"}
-            ${attributes.readonly && " readonly"}
-            ${this.isTyping && " istyping"}
+            ${attributes.disabled && ` disabled`}
+            ${attributes.readonly && ` readonly`}
+            ${this.isTyping && ` istyping`}
             ${this.textareaWrapperFocus}
             ${this.textareaWrapperHover}
           `}
@@ -281,10 +275,10 @@ export class ZInput {
 
   getTextareaExtraAttributes() {
     return {
-      onFocus: () => (this.textareaWrapperFocus = "focus"),
-      onBlur: () => (this.textareaWrapperFocus = ""),
-      onMouseOver: () => (this.textareaWrapperHover = "hover"),
-      onMouseOut: () => (this.textareaWrapperHover = "")
+      onFocus: () => (this.textareaWrapperFocus = `focus`),
+      onBlur: () => (this.textareaWrapperFocus = ``),
+      onMouseOver: () => (this.textareaWrapperHover = `hover`),
+      onMouseOut: () => (this.textareaWrapperHover = ``),
     };
   }
 
@@ -313,10 +307,10 @@ export class ZInput {
 
         <label
           htmlFor={this.htmlid}
-          class={`checkboxLabel ${this.labelafter ? "after" : "before"}`}
+          class={`checkboxLabel ${this.labelafter ? `after` : `before`}`}
         >
           <z-icon
-            name={this.checked ? "checkbox-selected" : "checkbox-unchecked"}
+            name={this.checked ? `checkbox-selected` : `checkbox-unchecked`}
             aria-hidden={true}
           />
           {this.label && <span innerHTML={this.label} />}
@@ -348,16 +342,14 @@ export class ZInput {
           id={this.htmlid}
           aria-activedescendant={this.value}
           class={`
-            ${this.isOpen ? "open" : "closed"}
-            ${this.disabled && " disabled"}
-            ${this.readonly && " readonly"}
-            ${this.status ? " input_" + this.status : " input_default"}
-            ${this.selectedItem ? " filled" : ""}
+            ${this.isOpen ? `open` : `closed`}
+            ${this.disabled && ` disabled`}
+            ${this.readonly && ` readonly`}
+            ${this.status ? ` input_` + this.status : ` input_default`}
+            ${this.selectedItem ? ` filled` : ``}
           `}
           onClick={() => this.toggleSelectUl()}
-          onKeyUp={(e: KeyboardEvent) =>
-            handleKeyboardSubmit(e, this.toggleSelectUl)
-          }
+          onKeyUp={(e: KeyboardEvent) => handleKeyboardSubmit(e, this.toggleSelectUl)}
           onKeyDown={(e: KeyboardEvent) =>
             this.arrowsSelectNav(
               e,
@@ -393,12 +385,10 @@ export class ZInput {
         role="option"
         tabindex={item.disabled ? -1 : 0}
         aria-selected={!!item.selected}
-        class={item.disabled && "disabled"}
+        class={item.disabled && `disabled`}
         id={`${this.htmlid}_${key}`}
         onClick={() => this.selectItem(item)}
-        onKeyUp={(e: KeyboardEvent) =>
-          handleKeyboardSubmit(e, this.selectItem, item)
-        }
+        onKeyUp={(e: KeyboardEvent) => handleKeyboardSubmit(e, this.selectItem, item)}
         onKeyDown={(e: KeyboardEvent) => this.arrowsSelectNav(e, key)}
       >
         <span>{item.name}</span>
@@ -440,13 +430,13 @@ export class ZInput {
     if (focusElem) focusElem.focus();
   }
 
-  toggleSelectUl(selfFocusOnClose: boolean = false) {
+  toggleSelectUl(selfFocusOnClose = false) {
     if (!this.isOpen) {
-      document.addEventListener("click", this.handleSelectFocus);
-      document.addEventListener("keyup", this.handleSelectFocus);
+      document.addEventListener(`click`, this.handleSelectFocus);
+      document.addEventListener(`keyup`, this.handleSelectFocus);
     } else {
-      document.removeEventListener("click", this.handleSelectFocus);
-      document.removeEventListener("keyup", this.handleSelectFocus);
+      document.removeEventListener(`click`, this.handleSelectFocus);
+      document.removeEventListener(`keyup`, this.handleSelectFocus);
       if (selfFocusOnClose) {
         this.hostElement.shadowRoot.getElementById(this.htmlid).focus();
       }
@@ -467,8 +457,7 @@ export class ZInput {
 
     const tree = getElementTree(getClickedElement());
     const parent = tree.find(
-      (elem: any) =>
-        elem.nodeName.toLowerCase() === "ul" && elem.id === this.htmlid
+      (elem: any) => elem.nodeName.toLowerCase() === `ul` && elem.id === this.htmlid
     );
 
     if (!parent) {

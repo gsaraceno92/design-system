@@ -59,7 +59,7 @@
   background-color: var(--bg-white);
   border-radius: 0 0 var(--radius-base) var(--radius-base);
   border: var(--border-base) solid var(--bg-grey-200);
-  border-top: 0px;
+  border-top: 0;
   position: relative;
   z-index: 12;
   padding: var(--basex1) var(--basex2);
@@ -85,12 +85,13 @@
 }
 
 ::-webkit-scrollbar {
-  background: linear-gradient(
-    90deg,
-    var(--bg-white) 2px,
-    var(--bg-grey-200) 4px,
-    var(--bg-white) 8px
-  );
+  background:
+    linear-gradient(
+      90deg,
+      var(--bg-white) 2px,
+      var(--bg-grey-200) 4px,
+      var(--bg-white) 8px
+    );
   border-radius: var(--radius-base);
   width: 10px;
 }

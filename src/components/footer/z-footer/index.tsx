@@ -1,17 +1,17 @@
-import { Component, Prop, State, h } from "@stencil/core";
-import { mobileBreakpoint } from "../../../constants/breakpoints";
+import { Component, Prop, State, h } from '@stencil/core';
+import { mobileBreakpoint } from '../../../constants/breakpoints';
 import {
   FooterBean,
   FooterGroupBean,
   FooterGroupItemBean,
   MyzLinkBean,
-  FooterSocialBean
-} from "../../../beans/index.js";
+  FooterSocialBean,
+} from '../../../beans/index.js';
 
 @Component({
-  tag: "z-footer",
-  styleUrls: ["styles.css"],
-  shadow: true
+  tag: `z-footer`,
+  styleUrls: [`styles.css`],
+  shadow: true,
 })
 export class ZFooter {
   /** JSON stringified data to fill the footer */
@@ -25,13 +25,11 @@ export class ZFooter {
 
   componentWillLoad() {
     this.jsonData = JSON.parse(this.data);
-    this.isOpen = Array<boolean>(this.jsonData.zanichelliLinks.length).fill(
-      false
-    );
+    this.isOpen = Array<boolean>(this.jsonData.zanichelliLinks.length).fill(false);
   }
 
   componentDidLoad() {
-    window.addEventListener("resize", this.resize.bind(this));
+    window.addEventListener(`resize`, this.resize.bind(this));
     this.resize();
   }
 
@@ -41,7 +39,7 @@ export class ZFooter {
 
   handleOnHeaderClick(id: number): void {
     // stencil non si accorge delle modifiche su isOpen quindi copio l'array prima
-    var open = this.isOpen.slice(0);
+    const open = this.isOpen.slice(0);
     open[id] = !open[id];
     this.isOpen = [...open];
   }
@@ -53,7 +51,7 @@ export class ZFooter {
           <h2>{group.title}</h2>
           {this.isMobile && (
             <z-icon
-              name={this.isOpen[id] ? "chevron-up" : "chevron-down"}
+              name={this.isOpen[id] ? `chevron-up` : `chevron-down`}
               width={16}
               height={16}
               onClick={() => this.handleOnHeaderClick(id)}
@@ -61,14 +59,11 @@ export class ZFooter {
           )}
         </div>
         <div class="content">
-          <ul class={this.isOpen[id] ? "show" : ""}>
+          <ul class={this.isOpen[id] ? `show` : ``}>
             {group.items.map(
               (item: FooterGroupItemBean): HTMLElement => (
                 <li>
-                  <a
-                    href={item.link}
-                    target={item.target ? item.target : "_blank"}
-                  >
+                  <a href={item.link} target={item.target ? item.target : `_blank`}>
                     {item.label}
                   </a>
                 </li>
@@ -87,8 +82,8 @@ export class ZFooter {
 
     if (this.isMobile) {
       zanichelliLinksToRender.push({
-        title: "Altre informazioni",
-        items: bottomLinks
+        title: `Altre informazioni`,
+        items: bottomLinks,
       });
     }
 
@@ -166,10 +161,7 @@ export class ZFooter {
             {bottomLinks.map(
               (item: FooterGroupItemBean): HTMLElement => (
                 <li>
-                  <a
-                    href={item.link}
-                    target={item.target ? item.target : "_blank"}
-                  >
+                  <a href={item.link} target={item.target ? item.target : `_blank`}>
                     {item.label}
                   </a>
                 </li>

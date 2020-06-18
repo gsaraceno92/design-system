@@ -1,20 +1,20 @@
-import { Component, Prop, h, State, Listen } from "@stencil/core";
-import { LicenseTypeEnum } from "../../../beans/index";
+import { Component, Prop, h, State, Listen } from '@stencil/core';
+import { LicenseTypeEnum } from '../../../beans/index';
 
 /**
  * @slot toggle - toggle button slot
  * @slot list - card resources list slot
  */
 @Component({
-  tag: "z-card-footer",
-  styleUrl: "styles.css",
+  tag: `z-card-footer`,
+  styleUrl: `styles.css`,
   shadow: true,
 })
 export class ZCardFooter {
   /** volume title */
   @Prop() titolo: string;
   /** authors label text */
-  @Prop() autorilabel: string = "Autore";
+  @Prop() autorilabel = `Autore`;
   /** authors name text */
   @Prop() autori: string;
   /** volume isbn */
@@ -24,9 +24,9 @@ export class ZCardFooter {
   /** card graphic variant (optional) */
   @Prop() cardtype?: LicenseTypeEnum;
 
-  @State() isOpen: boolean = false;
+  @State() isOpen = false;
 
-  @Listen("toggleClick")
+  @Listen(`toggleClick`)
   handleToggle(): void {
     this.isOpen = !this.isOpen;
   }
@@ -41,7 +41,7 @@ export class ZCardFooter {
 
   render() {
     return (
-      <div class={this.faded && "faded"}>
+      <div class={this.faded && `faded`}>
         <footer class={this.retrieveClass()}>
           <span class="toggle">
             <slot name="toggle" />

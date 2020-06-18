@@ -24,7 +24,13 @@
     "test.e2e": "stencil test --e2e",
     "release": "yarn build && yarn publish --registry https://registry.npmjs.com --access public",
     "start-storybook": "yarn build && start-storybook -p 3003 -s ./dist,./src/assets --ci",
-    "build-storybook": "yarn build && build-storybook -c .storybook -s ./dist,./src/assets . -o storybook"
+    "build-storybook": "yarn build && build-storybook -c .storybook -s ./dist,./src/assets . -o storybook",
+    "lint": "npx stylelint 'src/**/*.css' --fix || eslint 'src/**/*.{js,ts,tsx}' --fix"
+  },
+  "husky": {
+    "hooks": {
+      "no-pre-commit": "yarn lint && pretty-quick --staged"
+    }
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
@@ -38,13 +44,23 @@
     "@types/hammerjs": "^2.0.36",
     "@types/jest": "24.0.24",
     "@types/puppeteer": "1.20.3",
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
     "babel-loader": "^8.0.6",
+    "eslint": "^7.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
     "jest": "24.9.0",
     "jest-cli": "24.9.0",
     "lit-html": "^1.1.2",
     "plop": "^2.1.0",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "puppeteer": "1.20.0",
-    "storybook-addons-abstract": "^5.0.6"
+    "storybook-addons-abstract": "^5.0.6",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0"
   },
   "pre-commit": {
     "colors": true,

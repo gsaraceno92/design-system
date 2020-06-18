@@ -1,12 +1,12 @@
-import { Component, h, Prop } from "@stencil/core";
-import { LicenseTypeEnum } from "../../../beans/index";
+import { Component, h, Prop } from '@stencil/core';
+import { LicenseTypeEnum } from '../../../beans/index';
 
 /**
  * @slot  - generic card slot
  */
 @Component({
-  tag: "z-card",
-  styleUrl: "styles.css",
+  tag: `z-card`,
+  styleUrl: `styles.css`,
   shadow: true,
 })
 export class ZCardComponent {
@@ -15,22 +15,22 @@ export class ZCardComponent {
   /** graphic variant (optional) */
   @Prop() cardtype?: LicenseTypeEnum;
   /** pressed status */
-  @Prop() ispressed: boolean = false;
+  @Prop() ispressed = false;
   /** highlighted status */
-  @Prop() ishighlighted: boolean = false;
+  @Prop() ishighlighted = false;
 
   retrieveClass() {
-    let elemClasses = "";
+    let elemClasses = ``;
 
-    if (this.cardtype === LicenseTypeEnum.real) elemClasses += "real";
-    else if (this.cardtype === LicenseTypeEnum.trial) elemClasses += "trial";
+    if (this.cardtype === LicenseTypeEnum.real) elemClasses += `real`;
+    else if (this.cardtype === LicenseTypeEnum.trial) elemClasses += `trial`;
 
     if (this.faded) {
-      elemClasses += " faded";
+      elemClasses += ` faded`;
     } else if (this.ispressed) {
-      elemClasses += " pressed";
+      elemClasses += ` pressed`;
     } else if (this.ishighlighted) {
-      elemClasses += " highlighted";
+      elemClasses += ` highlighted`;
     }
 
     return elemClasses;

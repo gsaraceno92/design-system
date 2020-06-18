@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZButtonSort } from "./index";
+import { ZButtonSort } from './index';
 
-describe("Suite test ZButtonSort", () => {
-  it("Test render ZButtonSort vuoto", async () => {
+describe(`Suite test ZButtonSort`, () => {
+  it(`Test render ZButtonSort vuoto`, async () => {
     const page = await newSpecPage({
       components: [ZButtonSort],
-      html: `<z-button-sort></z-button-sort>`
+      html: `<z-button-sort></z-button-sort>`,
     });
     expect(page.root).toEqualHtml(`
       <z-button-sort>
@@ -21,10 +21,10 @@ describe("Suite test ZButtonSort", () => {
     `);
   });
 
-  it("Test render ZButtonSort con prop", async () => {
+  it(`Test render ZButtonSort con prop`, async () => {
     const page = await newSpecPage({
       components: [ZButtonSort],
-      html: `<z-button-sort label="label" counter="5"></z-button-sort>`
+      html: `<z-button-sort label="label" counter="5"></z-button-sort>`,
     });
     expect(page.root).toEqualHtml(`
       <z-button-sort label="label" counter="5">
@@ -39,10 +39,10 @@ describe("Suite test ZButtonSort", () => {
     `);
   });
 
-  it("Test render ZButtonSort selected", async () => {
+  it(`Test render ZButtonSort selected`, async () => {
     const page = await newSpecPage({
       components: [ZButtonSort],
-      html: `<z-button-sort></z-button-sort>`
+      html: `<z-button-sort></z-button-sort>`,
     });
     page.rootInstance.isselected = true;
     await page.waitForChanges();
@@ -59,10 +59,10 @@ describe("Suite test ZButtonSort", () => {
     `);
   });
 
-  it("Test render ZButtonSort sort", async () => {
+  it(`Test render ZButtonSort sort`, async () => {
     const page = await newSpecPage({
       components: [ZButtonSort],
-      html: `<z-button-sort></z-button-sort>`
+      html: `<z-button-sort></z-button-sort>`,
     });
     page.rootInstance.isselected = true;
     page.rootInstance.sortasc = false;
@@ -80,13 +80,13 @@ describe("Suite test ZButtonSort", () => {
     `);
   });
 
-  it("Test click ZButtonSort", async () => {
+  it(`Test click ZButtonSort`, async () => {
     const page = await newSpecPage({
       components: [ZButtonSort],
-      html: `<z-button-sort></z-button-sort>`
+      html: `<z-button-sort></z-button-sort>`,
     });
 
-    const button = page.root.shadowRoot.querySelector("button");
+    const button = page.root.shadowRoot.querySelector(`button`);
     expect(page.rootInstance.isselected).toEqual(false);
     expect(page.rootInstance.sortasc).toEqual(true);
     button.click();

@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZCardIcon } from "./index";
+import { ZCardIcon } from './index';
 
-describe("Suite test ZCardIcon", () => {
-  it("Test render ZCardIcon vuoto", async () => {
+describe(`Suite test ZCardIcon`, () => {
+  it(`Test render ZCardIcon vuoto`, async () => {
     const page = await newSpecPage({
       components: [ZCardIcon],
-      html: `<z-card-icon icon="icon"></z-card-icon>`
+      html: `<z-card-icon icon="icon"></z-card-icon>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -22,10 +22,10 @@ describe("Suite test ZCardIcon", () => {
     `);
   });
 
-  it("Test render ZCardIcon disabled", async () => {
+  it(`Test render ZCardIcon disabled`, async () => {
     const page = await newSpecPage({
       components: [ZCardIcon],
-      html: `<z-card-icon icon="icon" isdisabled></z-card-icon>`
+      html: `<z-card-icon icon="icon" isdisabled></z-card-icon>`,
     });
 
     expect(page.root).toEqualHtml(`

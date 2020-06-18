@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZPanelElem } from "./index";
+import { ZPanelElem } from './index';
 
-describe("Suite test ZPanelElem", () => {
-  it("Test render ZPanelElem vuoto", async () => {
+describe(`Suite test ZPanelElem`, () => {
+  it(`Test render ZPanelElem vuoto`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem></z-panel-elem>`
+      html: `<z-panel-elem></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -22,10 +22,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with only mandatory params", async () => {
+  it(`Test render ZPanelElem with only mandatory params`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -41,10 +41,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with elemid", async () => {
+  it(`Test render ZPanelElem with elemid`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -60,10 +60,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with elemid and isdisabled", async () => {
+  it(`Test render ZPanelElem with elemid and isdisabled`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem isdisabled elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem isdisabled elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -79,10 +79,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with target=_self", async () => {
+  it(`Test render ZPanelElem with target=_self`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem target="_self" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem target="_self" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -98,10 +98,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with linkicon", async () => {
+  it(`Test render ZPanelElem with linkicon`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -117,10 +117,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with imgurl", async () => {
+  it(`Test render ZPanelElem with imgurl`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem imgurl="exampleImgUrl" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem imgurl="exampleImgUrl" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -141,10 +141,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with imgurl and target=_self", async () => {
+  it(`Test render ZPanelElem with imgurl and target=_self`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem imgurl="exampleImgUrl" target="_self" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem imgurl="exampleImgUrl" target="_self" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -165,10 +165,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with imgalt", async () => {
+  it(`Test render ZPanelElem with imgalt`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem imgalt="exampleDesc" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem imgalt="exampleDesc" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -189,10 +189,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with imgalt and target=_self", async () => {
+  it(`Test render ZPanelElem with imgalt and target=_self`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem imgalt="exampleDesc" target="_self" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem imgalt="exampleDesc" target="_self" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -213,10 +213,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with icon and slot name", async () => {
+  it(`Test render ZPanelElem with icon and slot name`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem descr_slot_name="slotname" imgurl="exampleUrl" target="_self" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem descr_slot_name="slotname" imgurl="exampleUrl" target="_self" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -240,10 +240,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with icon and complete slot data", async () => {
+  it(`Test render ZPanelElem with icon and complete slot data`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem descr_slot_name="slotname" imgurl="exampleUrl" target="_self" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" > <span slot="slotname">Full application description</span> </z-panel-elem>`
+      html: `<z-panel-elem descr_slot_name="slotname" imgurl="exampleUrl" target="_self" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" > <span slot="slotname">Full application description</span> </z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -271,10 +271,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with imgurl and isdisabled", async () => {
+  it(`Test render ZPanelElem with imgurl and isdisabled`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem isdisabled imgurl="exampleImgUrl" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`
+      html: `<z-panel-elem isdisabled imgurl="exampleImgUrl" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" ></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -293,10 +293,10 @@ describe("Suite test ZPanelElem", () => {
     `);
   });
 
-  it("Test render ZPanelElem with imgalt and isdisabled", async () => {
+  it(`Test render ZPanelElem with imgalt and isdisabled`, async () => {
     const page = await newSpecPage({
       components: [ZPanelElem],
-      html: `<z-panel-elem isdisabled imgalt="exampleAlt" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" target="_self"></z-panel-elem>`
+      html: `<z-panel-elem isdisabled imgalt="exampleAlt" linkicon="example" elemid="example" linklabel="label" url="http://www.google.it" target="_self"></z-panel-elem>`,
     });
 
     expect(page.root).toEqualHtml(`

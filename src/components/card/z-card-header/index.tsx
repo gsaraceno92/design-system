@@ -1,12 +1,12 @@
-import { Component, Prop, h } from "@stencil/core";
-import { LicenseTypeEnum } from "../../../beans/index";
+import { Component, Prop, h } from '@stencil/core';
+import { LicenseTypeEnum } from '../../../beans/index';
 
 /**
  * @slot icon - card header icon slot
  */
 @Component({
-  tag: "z-card-header",
-  styleUrl: "styles.css",
+  tag: `z-card-header`,
+  styleUrl: `styles.css`,
   shadow: true,
 })
 export class ZCardHeader {

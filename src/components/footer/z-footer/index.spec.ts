@@ -1,9 +1,9 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZFooter } from "./index";
+import { ZFooter } from './index';
 
-describe("Suite test ZFooter", () => {
-  it("Test render ZFooter vuoto", async () => {
+describe(`Suite test ZFooter`, () => {
+  it(`Test render ZFooter vuoto`, async () => {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -11,7 +11,7 @@ describe("Suite test ZFooter", () => {
         "myzLink": {},
         "social": [],
         "bottomLinks": []
-      }'></z-footer>`
+      }'></z-footer>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -43,7 +43,7 @@ describe("Suite test ZFooter", () => {
     `);
   });
 
-  it("Test render ZFooter con zanichelli link", async () => {
+  it(`Test render ZFooter con zanichelli link`, async () => {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -79,7 +79,7 @@ describe("Suite test ZFooter", () => {
         "myzLink": {},
         "social": [],
         "bottomLinks": []
-      }' copyrightuser='Zanichelli'></z-footer>`
+      }' copyrightuser='Zanichelli'></z-footer>`,
     });
 
     expect(page.root).toEqualHtml(
@@ -175,7 +175,7 @@ describe("Suite test ZFooter", () => {
     );
   });
 
-  it("Test render ZFooter con myz link", async () => {
+  it(`Test render ZFooter con myz link`, async () => {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -183,7 +183,7 @@ describe("Suite test ZFooter", () => {
         "myzLink": {"label": "MyZ", "link": "https://my.zanichelli.it", "img": "logo.png"},
         "social": [],
         "bottomLinks": []
-      }' copyrightuser='Zanichelli'></z-footer>`
+      }' copyrightuser='Zanichelli'></z-footer>`,
     });
 
     expect(page.root).toEqualHtml(
@@ -220,7 +220,7 @@ describe("Suite test ZFooter", () => {
     );
   });
 
-  it("Test render ZFooter con social", async () => {
+  it(`Test render ZFooter con social`, async () => {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -231,7 +231,7 @@ describe("Suite test ZFooter", () => {
           {"icon": "youtube.png", "link": "https://www.youtube.com/user/zanichellieditore", "description" : "youtube"}
         ],
         "bottomLinks": []
-      }' copyrightuser='Zanichelli'></z-footer>`
+      }' copyrightuser='Zanichelli'></z-footer>`,
     });
 
     expect(page.root).toEqualHtml(
@@ -282,7 +282,7 @@ describe("Suite test ZFooter", () => {
     );
   });
 
-  it("Test render ZFooter con social, ma senza il parametro 'description' ", async () => {
+  it(`Test render ZFooter con social, ma senza il parametro 'description' `, async () => {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -293,7 +293,7 @@ describe("Suite test ZFooter", () => {
           {"icon": "youtube.png", "link": "https://www.youtube.com/user/zanichellieditore"}
         ],
         "bottomLinks": []
-      }' copyrightuser='Zanichelli'></z-footer>`
+      }' copyrightuser='Zanichelli'></z-footer>`,
     });
 
     expect(page.root).toEqualHtml(
@@ -344,7 +344,7 @@ describe("Suite test ZFooter", () => {
     );
   });
 
-  it("Test render ZFooter con bottom link", async () => {
+  it(`Test render ZFooter con bottom link`, async () => {
     const page = await newSpecPage({
       components: [ZFooter],
       html: `<z-footer data='{
@@ -355,7 +355,7 @@ describe("Suite test ZFooter", () => {
           {"label": "Chi siamo", "link": "https://www.zanichelli.it/chi-siamo/via-irnerio-34"},
           {"label": "Contatti e recapiti", "link": "https://www.zanichelli.it/contatti-e-recapiti", "target": "_self"}
         ]
-      }' copyrightuser='Zanichelli'></z-footer>`
+      }' copyrightuser='Zanichelli'></z-footer>`,
     });
 
     expect(page.root).toEqualHtml(

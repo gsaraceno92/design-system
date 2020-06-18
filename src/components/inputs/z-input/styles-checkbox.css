@@ -54,30 +54,18 @@
 }
 
 /* focus */
-:host
-  > .checkboxWrapper
-  > input[type="checkbox"]:focus
-  + label.checkboxLabel
-  > z-icon {
+:host > .checkboxWrapper > input[type="checkbox"]:focus + label.checkboxLabel > z-icon {
   box-shadow: 0 0 2px 2px var(--accent-dark);
 }
 
 /* disabled */
-:host
-  > .checkboxWrapper
-  > input[type="checkbox"]:disabled
-  + label.checkboxLabel
-  > z-icon {
+:host > .checkboxWrapper > input[type="checkbox"]:disabled + label.checkboxLabel > z-icon {
   fill: var(--bg-grey-700);
   cursor: default;
 }
 
 /* readonly */
-:host
-  > .checkboxWrapper
-  > input[type="checkbox"][readonly]
-  + label.checkboxLabel
-  > z-icon {
+:host > .checkboxWrapper > input[type="checkbox"][readonly] + label.checkboxLabel > z-icon {
   fill: var(--bg-grey-800);
   pointer-events: none;
   cursor: default;

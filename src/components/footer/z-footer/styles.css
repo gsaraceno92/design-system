@@ -140,7 +140,7 @@ footer > section.bottom > div.item > ul.social {
   display: flex;
   width: auto;
   padding: 0;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 footer > section.bottom > div.item > ul.social > li {
@@ -226,7 +226,7 @@ footer > section.bottom > div.logo > p > span {
   footer > section.top > nav > .content > ul > li {
     width: 223px;
     margin: 0 var(--basex1) 0 0;
-    padding: var(--half-x1) 0px;
+    padding: var(--half-x1) 0;
     border: none;
   }
 
@@ -253,7 +253,7 @@ footer > section.bottom > div.logo > p > span {
   footer > section.bottom > div.item:nth-child(2) {
     order: 2;
     border-bottom: none;
-    margin: 0px var(--basex2) 0px var(--basex2);
+    margin: 0 var(--basex2) 0 var(--basex2);
   }
 
   footer > section.bottom > div.item > p {

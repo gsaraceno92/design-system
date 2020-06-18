@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZCardComponent } from "./index";
+import { ZCardComponent } from './index';
 
-describe("Suite test ZCard", () => {
-  it("Test render ZCard vuota", async () => {
+describe(`Suite test ZCard`, () => {
+  it(`Test render ZCard vuota`, async () => {
     const page = await newSpecPage({
       components: [ZCardComponent],
-      html: `<z-card></z-card>`
+      html: `<z-card></z-card>`,
     });
 
     expect(page.root).toEqualHtml(`

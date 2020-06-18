@@ -1,12 +1,12 @@
-import { Component, Prop, h } from "@stencil/core";
+import { Component, Prop, h } from '@stencil/core';
 
 /**
  * @slot `descr_slot_name` - description content
  */
 @Component({
-  tag: "z-panel-elem",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-panel-elem`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZPanelElem {
   /** html element id (optional) */
@@ -22,7 +22,7 @@ export class ZPanelElem {
   /** link url */
   @Prop() url: string;
   /** link target (optional) */
-  @Prop() target?: string = "_blank";
+  @Prop() target?: string = `_blank`;
   /** disabled status flag (optional) */
   @Prop() isdisabled?: boolean = false;
   /** name of slot container (optional) */
@@ -40,7 +40,7 @@ export class ZPanelElem {
   }
 
   render() {
-    const elemId = this.elemid ? this.elemid : "";
+    const elemId = this.elemid ? this.elemid : ``;
     return (
       <div class="panel-elem-container">
         {(this.imgurl || this.imgalt) && (
@@ -52,7 +52,7 @@ export class ZPanelElem {
             icon={this.linkicon}
             isdisabled={this.isdisabled}
             target={this.target}
-            htmlid={elemId + "link_id"}
+            htmlid={elemId + `link_id`}
           >
             {this.linklabel}
           </z-link>

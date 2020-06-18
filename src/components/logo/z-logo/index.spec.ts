@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZLogo } from "./index";
+import { ZLogo } from './index';
 
-describe("Suite test ZLogo", () => {
-  it("Test render ZLogo con svg", async () => {
+describe(`Suite test ZLogo`, () => {
+  it(`Test render ZLogo con svg`, async () => {
     const page = await newSpecPage({
       components: [ZLogo],
-      html: `<z-logo ></z-logo>`
+      html: `<z-logo ></z-logo>`,
     });
     expect(page.root).toEqualHtml(`
       <z-logo>
@@ -41,10 +41,10 @@ describe("Suite test ZLogo", () => {
     `);
   });
 
-  it("Test render ZLogo con img alt", async () => {
+  it(`Test render ZLogo con img alt`, async () => {
     const page = await newSpecPage({
       components: [ZLogo],
-      html: `<z-logo imagealt="zlogo"></z-logo>`
+      html: `<z-logo imagealt="zlogo"></z-logo>`,
     });
     expect(page.root).toEqualHtml(`
       <z-logo imagealt="zlogo">
@@ -79,10 +79,10 @@ describe("Suite test ZLogo", () => {
     `);
   });
 
-  it("Test render ZLogo con link", async () => {
+  it(`Test render ZLogo con link`, async () => {
     const page = await newSpecPage({
       components: [ZLogo],
-      html: `<z-logo link="http://www.zanichelli.it/"></z-logo>`
+      html: `<z-logo link="http://www.zanichelli.it/"></z-logo>`,
     });
     expect(page.root).toEqualHtml(`
       <z-logo link="http://www.zanichelli.it/">
@@ -119,10 +119,10 @@ describe("Suite test ZLogo", () => {
     `);
   });
 
-  it("Test render ZLogo con link e targetblank", async () => {
+  it(`Test render ZLogo con link e targetblank`, async () => {
     const page = await newSpecPage({
       components: [ZLogo],
-      html: `<z-logo link="http://www.zanichelli.it/" targetblank></z-logo>`
+      html: `<z-logo link="http://www.zanichelli.it/" targetblank></z-logo>`,
     });
     expect(page.root).toEqualHtml(`
       <z-logo link="http://www.zanichelli.it/" targetblank>

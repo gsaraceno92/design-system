@@ -31,9 +31,9 @@ export type FooterSocialBean = {
 };
 
 export enum LicenseTypeEnum {
-  real = "reale",
-  virtual = "virtuale",
-  trial = "saggio",
+  real = `reale`,
+  virtual = `virtuale`,
+  trial = `saggio`,
 }
 export type LicenseType = LicenseTypeEnum;
 
@@ -94,45 +94,45 @@ export type ComboItemBean = {
 export type ButtonVariantBean = ButtonVariantEnum;
 
 export enum ButtonVariantEnum {
-  primary = "primary",
-  secondary = "secondary",
-  tertiary = "tertiary",
+  primary = `primary`,
+  secondary = `secondary`,
+  tertiary = `tertiary`,
 }
 
 export enum ButtonTypeEnum {
-  submit = "submit",
-  reset = "reset",
-  button = "button",
+  submit = `submit`,
+  reset = `reset`,
+  button = `button`,
 }
 
 export type InputTypeBean = InputTypeEnum;
 
 export enum InputTypeEnum {
-  text = "text",
-  password = "password",
-  number = "number",
-  email = "email",
-  textarea = "textarea",
-  checkbox = "checkbox",
-  select = "select",
+  text = `text`,
+  password = `password`,
+  number = `number`,
+  email = `email`,
+  textarea = `textarea`,
+  checkbox = `checkbox`,
+  select = `select`,
 }
 
 export type InputStatusBean = InputStatusEnum;
 
 export enum InputStatusEnum {
-  success = "success",
-  error = "error",
-  warning = "warning",
+  success = `success`,
+  error = `error`,
+  warning = `warning`,
 }
 
 export type TooltipPositionBean = TooltipPosition;
 
 export enum TooltipPosition {
-  TOP = "TOP",
-  BOTTOM = "BOTTOM",
-  LEFT = "LEFT",
-  RIGHT = "RIGHT",
-  NO_ARROW = "NO_ARROW",
+  TOP = `TOP`,
+  BOTTOM = `BOTTOM`,
+  LEFT = `LEFT`,
+  RIGHT = `RIGHT`,
+  NO_ARROW = `NO_ARROW`,
 }
 
 export enum keybordKeyCodeEnum {

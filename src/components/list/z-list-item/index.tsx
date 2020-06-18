@@ -1,10 +1,10 @@
-import { Component, Prop, h, Event, EventEmitter } from "@stencil/core";
-import { handleKeyboardSubmit } from "../../../utils/utils";
+import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
+import { handleKeyboardSubmit } from '../../../utils/utils';
 
 @Component({
-  tag: "z-list-item",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-list-item`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZListItem {
   /** content text */
@@ -12,7 +12,7 @@ export class ZListItem {
   /** link url (optional) */
   @Prop() link?: string;
   /** link target (optional) */
-  @Prop() linktarget?: string = "_self";
+  @Prop() linktarget?: string = `_self`;
   /** icon name (optional) */
   @Prop() icon?: string;
   /** id (optional) */
@@ -20,7 +20,7 @@ export class ZListItem {
   /** data-action attribute (optional) */
   @Prop() action?: string;
   /** underlined style flag */
-  @Prop() underlined: boolean = true;
+  @Prop() underlined = true;
 
   /** emitted on list item link click, returns linkId */
   @Event() zListItemLinkClick: EventEmitter;
@@ -40,7 +40,7 @@ export class ZListItem {
   }
 
   render() {
-    const linkId = this.listitemid ? `link_${this.listitemid}` : "";
+    const linkId = this.listitemid ? `link_${this.listitemid}` : ``;
 
     return (
       <li
@@ -52,20 +52,18 @@ export class ZListItem {
           handleKeyboardSubmit(ev, this.emitZListItemClick, this.listitemid)
         }
       >
-        <span class={this.underlined && "border"}>
+        <span class={this.underlined && `border`}>
           {this.icon && <z-icon name={this.icon} />}
           {this.link ? (
             <a
               href={this.link ? this.link : null}
               target={this.linktarget}
               id={linkId}
-              onClick={(e: MouseEvent) =>
-                this.emitZListItemLinkClick(e, linkId)
-              }
+              onClick={(e: MouseEvent) => this.emitZListItemLinkClick(e, linkId)}
               onKeyPress={(ev: KeyboardEvent) =>
                 handleKeyboardSubmit(ev, this.emitZListItemLinkClick, linkId)
               }
-              role={this.link ? "link" : "button"}
+              role={this.link ? `link` : `button`}
               tabindex="0"
             >
               {this.text}

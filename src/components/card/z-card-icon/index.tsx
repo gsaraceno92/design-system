@@ -1,15 +1,15 @@
-import { Component, Prop, h } from "@stencil/core";
+import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: "z-card-icon",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-card-icon`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZCardIcon {
   /** icon name */
   @Prop() icon: string;
   /** disabled status flag */
-  @Prop() isdisabled: boolean = false;
+  @Prop() isdisabled = false;
 
   render() {
     return (

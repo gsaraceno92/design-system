@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZPaginationBar } from "./index";
+import { ZPaginationBar } from './index';
 
-describe("Suite test ZPaginationBar", () => {
-  it("Test render ZPaginationBar vuoto", async () => {
+describe(`Suite test ZPaginationBar`, () => {
+  it(`Test render ZPaginationBar vuoto`, async () => {
     const page = await newSpecPage({
       components: [ZPaginationBar],
-      html: `<z-pagination-bar></z-pagination-bar>`
+      html: `<z-pagination-bar></z-pagination-bar>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -21,10 +21,10 @@ describe("Suite test ZPaginationBar", () => {
     `);
   });
 
-  it("Test render ZPaginationBar pieno", async () => {
+  it(`Test render ZPaginationBar pieno`, async () => {
     const page = await newSpecPage({
       components: [ZPaginationBar],
-      html: `<z-pagination-bar pages="20" visiblepages="10" currentpage="1"></z-pagination-bar>`
+      html: `<z-pagination-bar pages="20" visiblepages="10" currentpage="1"></z-pagination-bar>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -49,10 +49,10 @@ describe("Suite test ZPaginationBar", () => {
     `);
   });
 
-  it("Test render ZPaginationBar pieno", async () => {
+  it(`Test render ZPaginationBar pieno`, async () => {
     const page = await newSpecPage({
       components: [ZPaginationBar],
-      html: `<z-pagination-bar pages="20" visiblepages="10" currentpage="5"></z-pagination-bar>`
+      html: `<z-pagination-bar pages="20" visiblepages="10" currentpage="5"></z-pagination-bar>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -77,10 +77,10 @@ describe("Suite test ZPaginationBar", () => {
     `);
   });
 
-  it("Test render ZPaginationBar pieno click avanti", async () => {
+  it(`Test render ZPaginationBar pieno click avanti`, async () => {
     const page = await newSpecPage({
       components: [ZPaginationBar],
-      html: `<z-pagination-bar pages="20" visiblepages="10" currentpage="5"></z-pagination-bar>`
+      html: `<z-pagination-bar pages="20" visiblepages="10" currentpage="5"></z-pagination-bar>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -104,9 +104,7 @@ describe("Suite test ZPaginationBar", () => {
       </z-pagination-bar>
     `);
 
-    let chevrons = page.root.shadowRoot
-      .querySelector("div")
-      .querySelectorAll("z-icon");
+    const chevrons = page.root.shadowRoot.querySelector(`div`).querySelectorAll(`z-icon`);
 
     chevrons[1].click();
     await page.waitForChanges();
@@ -132,10 +130,10 @@ describe("Suite test ZPaginationBar", () => {
     `);
   });
 
-  it("Test render ZPaginationBar start click indietro", async () => {
+  it(`Test render ZPaginationBar start click indietro`, async () => {
     const page = await newSpecPage({
       components: [ZPaginationBar],
-      html: `<z-pagination-bar pages="20" visiblepages="10" currentpage="5"></z-pagination-bar>`
+      html: `<z-pagination-bar pages="20" visiblepages="10" currentpage="5"></z-pagination-bar>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -159,9 +157,7 @@ describe("Suite test ZPaginationBar", () => {
       </z-pagination-bar>
     `);
 
-    let chevrons = page.root.shadowRoot
-      .querySelector("div")
-      .querySelectorAll("z-icon");
+    const chevrons = page.root.shadowRoot.querySelector(`div`).querySelectorAll(`z-icon`);
 
     //Mi sposto avanti di una pagina
     chevrons[1].click();

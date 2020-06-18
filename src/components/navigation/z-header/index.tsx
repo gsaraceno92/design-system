@@ -1,27 +1,19 @@
-import {
-  Component,
-  Prop,
-  h,
-  State,
-  Element,
-  Listen,
-  Watch
-} from "@stencil/core";
+import { Component, Prop, h, State, Element, Listen, Watch } from '@stencil/core';
 import {
   MenuItem,
   HeaderUserData,
   ListItemBean,
-  ButtonVariantEnum
-} from "../../../beans";
-import { mobileBreakpoint } from "../../../constants/breakpoints";
+  ButtonVariantEnum,
+} from '../../../beans';
+import { mobileBreakpoint } from '../../../constants/breakpoints';
 
 /**
  * @slot editors - top menu editors images bar (only with ismyz prop === true)
  */
 @Component({
-  tag: "z-header",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: 'z-header',
+  styleUrl: 'styles.css',
+  shadow: true,
 })
 export class ZHeader {
   /** data to fill internal navigation links */
@@ -43,32 +35,32 @@ export class ZHeader {
 
   @State() activeMenuItem: MenuItem;
   @State() currentMenuItem: MenuItem;
-  @State() isMobile: boolean = true;
-  @State() isMenuMobileOpen: boolean = false;
+  @State() isMobile = true;
+  @State() isMenuMobileOpen = false;
   private intMenuData: MenuItem[] = [];
   private extMenuData: MenuItem[] = [];
   private userData: HeaderUserData;
-  private isLogged: boolean = false;
+  private isLogged = false;
 
   @Element() private element: HTMLElement;
 
-  @Watch("activeintlinkid")
+  @Watch('activeintlinkid')
   activeIntLinkChange(newValue: string) {
     this.activeMenuItem = this.currentMenuItem = this.intMenuData.find(
       (item: MenuItem) => item.id === newValue
     );
   }
 
-  @Listen("resize", { target: "window" })
+  @Listen(`resize`, { target: `window` })
   handleResize(): void {
     this.isMobile = window.innerWidth <= mobileBreakpoint;
   }
 
-  @Listen("zListItemLinkClick", { capture: true })
+  @Listen('zListItemLinkClick', { capture: true })
   handleZListItemLinkClick(): void {
     this.isMenuMobileOpen = false;
   }
-  @Listen("zListItemClick", { capture: true })
+  @Listen('zListItemClick', { capture: true })
   handleZListItemClick(): void {
     this.isMenuMobileOpen = false;
   }
@@ -76,7 +68,7 @@ export class ZHeader {
   componentWillLoad() {
     if (this.intlinkdata) {
       this.intMenuData =
-        typeof this.intlinkdata === "string"
+        typeof this.intlinkdata === 'string'
           ? JSON.parse(this.intlinkdata)
           : this.intlinkdata;
     }
@@ -86,13 +78,13 @@ export class ZHeader {
 
     if (this.extlinkdata) {
       this.extMenuData =
-        typeof this.extlinkdata === "string"
+        typeof this.extlinkdata === 'string'
           ? JSON.parse(this.extlinkdata)
           : this.extlinkdata;
     }
     if (this.userdata) {
       this.userData =
-        typeof this.userdata === "string"
+        typeof this.userdata === `string`
           ? JSON.parse(this.userdata)
           : this.userdata;
       this.isLogged = this.userData.islogged;
@@ -131,7 +123,7 @@ export class ZHeader {
 
     return (
       <div id="link-int" class="link-int">
-        {menuItems.map(item => this.renderIntMenuItem(item))}
+        {menuItems.map((item) => this.renderIntMenuItem(item))}
       </div>
     );
   }
@@ -155,7 +147,7 @@ export class ZHeader {
           onMouseLeave={() => {
             this.activeMenuItem = this.currentMenuItem;
           }}
-          role={link ? "link" : "button"}
+          role={link ? `link` : `button`}
           tabindex={this.getIntMenuItemTabindex(menuItem)}
         >
           <span>{label}</span>
@@ -165,9 +157,7 @@ export class ZHeader {
           height="8"
           width="16"
           class={
-            this.activeMenuItem
-              ? id !== this.activeMenuItem.id && "hidden"
-              : "hidden"
+            this.activeMenuItem ? id !== this.activeMenuItem.id && 'hidden' : 'hidden'
           }
         >
           <polygon points="8,0 16,8 0,8" class="arrow" />
@@ -184,12 +174,10 @@ export class ZHeader {
   handleToggleMobileMenuItem(elementId: string): void {
     if (!this.isMobile) return;
 
+    this.element.shadowRoot.getElementById(elementId).classList.toggle('isopen');
     this.element.shadowRoot
-      .getElementById(elementId)
-      .classList.toggle("isopen");
-    this.element.shadowRoot
-      .getElementById("mobile-dropdown-" + elementId)
-      .classList.toggle("visible");
+      .getElementById('mobile-dropdown-' + elementId)
+      .classList.toggle('visible');
   }
 
   renderMenuItemsData(menuItem): HTMLSpanElement | null {
@@ -200,7 +188,7 @@ export class ZHeader {
         id: item.id,
         text: item.label,
         link: item.link,
-        listitemid: item.id
+        listitemid: item.id,
       };
     });
     return this.renderMobileSubMenu(listItems, menuItem.id);
@@ -208,7 +196,7 @@ export class ZHeader {
 
   renderMobileSubMenu(menuItems: ListItemBean[], id?: string): HTMLSpanElement {
     return (
-      <span class="mobile-dropdown" id={id ? `mobile-dropdown-${id}` : ""}>
+      <span class="mobile-dropdown" id={id ? `mobile-dropdown-${id}` : ''}>
         <z-list list={menuItems} />
       </span>
     );
@@ -216,7 +204,7 @@ export class ZHeader {
 
   renderSubMenu(menuItem: MenuItem): HTMLDivElement | undefined {
     if (!this.ismyz || !this.isLogged) return;
-    if (!menuItem || !menuItem["subMenu"]) {
+    if (!menuItem || !menuItem['subMenu']) {
       return <div id="dropdown-menu" class={`dropdown-menu hidden`} />;
     }
 
@@ -228,9 +216,9 @@ export class ZHeader {
               <li>
                 <a
                   id={item.id}
-                  class={item.id === this.activesublinkid ? "active" : ""}
+                  class={item.id === this.activesublinkid ? `active` : ``}
                   href={item.link ? item.link : null}
-                  role={item.link ? "link" : "button"}
+                  role={item.link ? `link` : `button`}
                   tabindex={this.getIntMenuItemTabindex(menuItem)}
                 >
                   {item.label}
@@ -252,7 +240,7 @@ export class ZHeader {
           (menuItem: MenuItem): HTMLSpanElement => {
             const { id, label, link, icon } = menuItem;
             return (
-              <span class={`link-ext-span ${this.ismyz && "myz"}`}>
+              <span class={`link-ext-span ${this.ismyz && 'myz'}`}>
                 <z-link
                   id={id}
                   htmlid={id}
@@ -291,9 +279,7 @@ export class ZHeader {
     return (
       <z-button
         htmlid="login-button"
-        variant={
-          this.ismyz ? ButtonVariantEnum.secondary : ButtonVariantEnum.tertiary
-        }
+        variant={this.ismyz ? ButtonVariantEnum.secondary : ButtonVariantEnum.tertiary}
         icon="enter"
         issmall={true}
       >
@@ -309,7 +295,7 @@ export class ZHeader {
           <a
             class="menu-item"
             id="user-data"
-            onClick={() => this.handleToggleMobileMenuItem("user-data")}
+            onClick={() => this.handleToggleMobileMenuItem('user-data')}
             role="button"
           >
             <span>
@@ -327,22 +313,20 @@ export class ZHeader {
   renderUserData(userData: HeaderUserData) {
     if (this.isMobile && !userData) return null;
 
-    const listItems: ListItemBean[] = userData.userlinks.map(
-      (item: MenuItem) => {
-        return {
-          text: item.label,
-          link: item.link,
-          icon: item.icon,
-          listitemid: item.id
-        };
-      }
-    );
-    return this.renderMobileSubMenu(listItems, "user-data");
+    const listItems: ListItemBean[] = userData.userlinks.map((item: MenuItem) => {
+      return {
+        text: item.label,
+        link: item.link,
+        icon: item.icon,
+        listitemid: item.id,
+      };
+    });
+    return this.renderMobileSubMenu(listItems, 'user-data');
   }
 
   renderDesktopHeader(): HTMLHeadingElement {
     return (
-      <header class={`${!this.ismyz && "myz-out"}`}>
+      <header class={`${!this.ismyz && 'myz-out'}`}>
         {this.renderTopHeader()}
         {this.renderMainHeader()}
         {this.renderSubMenu(this.activeMenuItem)}
@@ -352,7 +336,7 @@ export class ZHeader {
 
   renderMainHeader(): HTMLDivElement {
     return (
-      <div id="main-header" class={`main-header ${!this.ismyz && "myz-out"}`}>
+      <div id="main-header" class={`main-header ${!this.ismyz && 'myz-out'}`}>
         {this.renderLogoDiv()}
         {this.renderIntMenu(this.intMenuData)}
         {this.renderExtMenu(this.extMenuData)}
@@ -372,10 +356,7 @@ export class ZHeader {
 
   renderMobileMenu(): HTMLDivElement {
     return (
-      <div
-        id="mobile-header"
-        class={`mobile-header ${!this.ismyz && "myz-out"}`}
-      >
+      <div id="mobile-header" class={`mobile-header ${!this.ismyz && 'myz-out'}`}>
         {this.renderLogoDiv()}
         {this.renderMobileMenuToggle()}
       </div>
@@ -392,7 +373,7 @@ export class ZHeader {
         onClick={() => (this.isMenuMobileOpen = !this.isMenuMobileOpen)}
       >
         <div
-          class={`menu-toggle ${this.isMenuMobileOpen && "is-active"}`}
+          class={`menu-toggle ${this.isMenuMobileOpen && 'is-active'}`}
           id="mobile-menu"
         >
           <span class="bar" />
@@ -410,8 +391,9 @@ export class ZHeader {
     return (
       <div
         id="mobile-content"
-        class={`mobile-content ${this.isMenuMobileOpen && "open"} ${!this
-          .ismyz && "myz-out"}`}
+        class={`mobile-content ${this.isMenuMobileOpen && `open`} ${!this
+          !this.ismyz && 'myz-out'
+        }`}
       >
         {this.renderMobileLoginDiv(this.userData)}
         {this.ismyz && <hr />}
@@ -423,8 +405,6 @@ export class ZHeader {
   }
 
   render() {
-    return this.isMobile
-      ? this.renderMobileHeader()
-      : this.renderDesktopHeader();
+    return this.isMobile ? this.renderMobileHeader() : this.renderDesktopHeader();
   }
 }

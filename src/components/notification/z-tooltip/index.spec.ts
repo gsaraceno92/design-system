@@ -1,13 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZTooltip } from "./index";
+import { ZTooltip } from './index';
 
-describe("Suite test ZTooltip", () => {
-
-  it("Test render ZTooltip left", async () => {
+describe(`Suite test ZTooltip`, () => {
+  it(`Test render ZTooltip left`, async () => {
     const page = await newSpecPage({
       components: [ZTooltip],
-      html: `<z-tooltip content='Ciao' type='left'></z-tooltip>`
+      html: `<z-tooltip content='Ciao' type='left'></z-tooltip>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -21,10 +20,10 @@ describe("Suite test ZTooltip", () => {
     `);
   });
 
-  it("Test render ZTooltip right", async () => {
+  it(`Test render ZTooltip right`, async () => {
     const page = await newSpecPage({
       components: [ZTooltip],
-      html: `<z-tooltip content='Ciao' type='right'></z-tooltip>`
+      html: `<z-tooltip content='Ciao' type='right'></z-tooltip>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -38,10 +37,10 @@ describe("Suite test ZTooltip", () => {
     `);
   });
 
-  it("Test render ZTooltip top", async () => {
+  it(`Test render ZTooltip top`, async () => {
     const page = await newSpecPage({
       components: [ZTooltip],
-      html: `<z-tooltip content='Ciao' type='top'></z-tooltip>`
+      html: `<z-tooltip content='Ciao' type='top'></z-tooltip>`,
     });
 
     expect(page.root).toEqualHtml(`
@@ -55,10 +54,10 @@ describe("Suite test ZTooltip", () => {
     `);
   });
 
-  it("Test render ZTooltip bottom", async () => {
+  it(`Test render ZTooltip bottom`, async () => {
     const page = await newSpecPage({
       components: [ZTooltip],
-      html: `<z-tooltip content='Ciao' type='bottom'></z-tooltip>`
+      html: `<z-tooltip content='Ciao' type='bottom'></z-tooltip>`,
     });
 
     expect(page.root).toEqualHtml(`

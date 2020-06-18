@@ -19,12 +19,12 @@
   text-align: center;
   background: var(--bg-white);
   border: 1px solid var(--bg-grey-200);
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
   padding: var(--basex2);
 }
 
 /* Tooltip Top */
-:host > div.tooltip-top-arrow:after {
+:host > div.tooltip-top-arrow::after {
   content: "";
   position: absolute;
   left: calc(50% - 7px);
@@ -35,11 +35,11 @@
   transform: rotate(45deg);
   border-left: 1px solid var(--bg-grey-200);
   border-top: 1px solid var(--bg-grey-200);
-  box-shadow: 0px -1px 20px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -1px 20px 0 rgba(0, 0, 0, 0.08);
 }
 
 /* Tooltip Bottom */
-:host > div.tooltip-bottom-arrow:after {
+:host > div.tooltip-bottom-arrow::after {
   content: "";
   position: absolute;
   left: calc(50% - 7px);
@@ -50,11 +50,11 @@
   transform: rotate(45deg);
   border-right: 1px solid var(--bg-grey-200);
   border-bottom: 1px solid var(--bg-grey-200);
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
 }
 
 /* Tooltip left */
-:host > div.tooltip-left-arrow:after {
+:host > div.tooltip-left-arrow::after {
   content: "";
   position: absolute;
   top: calc(50% - 7px);
@@ -65,11 +65,11 @@
   transform: rotate(45deg);
   border-left: 1px solid var(--bg-grey-200);
   border-bottom: 1px solid var(--bg-grey-200);
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
 }
 
 /* Tooltip Top */
-:host > div.tooltip-right-arrow:after {
+:host > div.tooltip-right-arrow::after {
   content: "";
   position: absolute;
   top: calc(50% - 7px);
@@ -80,5 +80,5 @@
   transform: rotate(45deg);
   border-right: 1px solid var(--bg-grey-200);
   border-top: 1px solid var(--bg-grey-200);
-  box-shadow: 0px -1px 2px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.08);
 }

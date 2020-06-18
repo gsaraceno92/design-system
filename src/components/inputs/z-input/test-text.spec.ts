@@ -1,14 +1,14 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZIcon } from "../../icons/z-icon";
+import { ZIcon } from '../../icons/z-icon';
 
-import { ZInput } from "./index";
+import { ZInput } from './index';
 
-describe("Suite test ZInput - text", () => {
-  it("Test render ZInput vuoto", async () => {
+describe(`Suite test ZInput - text`, () => {
+  it(`Test render ZInput vuoto`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" htmlid="id"></z-input>`
+      html: `<z-input hasmessage="false" htmlid="id"></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input hasmessage="false" htmlid="id">
@@ -23,10 +23,10 @@ describe("Suite test ZInput - text", () => {
     `);
   });
 
-  it("Test render ZInput con attributi", async () => {
+  it(`Test render ZInput con attributi`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label'></z-input>`
+      html: `<z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label'></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label'>
@@ -43,10 +43,10 @@ describe("Suite test ZInput - text", () => {
     `);
   });
 
-  it("Test render ZInput con attributi disabled", async () => {
+  it(`Test render ZInput con attributi disabled`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label' disabled></z-input>`
+      html: `<z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label' disabled></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label' disabled>
@@ -62,10 +62,10 @@ describe("Suite test ZInput - text", () => {
     `);
   });
 
-  it("Test render ZInput con attributi readonly", async () => {
+  it(`Test render ZInput con attributi readonly`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label' readonly></z-input>`
+      html: `<z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label' readonly></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input hasmessage="false" type='text' htmlid='test' placeholder='placeholder' value='value' label='label' readonly>
@@ -81,10 +81,10 @@ describe("Suite test ZInput - text", () => {
     `);
   });
 
-  it("Test render ZInput con helper message", async () => {
+  it(`Test render ZInput con helper message`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label' message='helper message'></z-input>`
+      html: `<z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label' message='helper message'></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label' message='helper message'>
@@ -104,10 +104,10 @@ describe("Suite test ZInput - text", () => {
     `);
   });
 
-  it("Test render ZInput con status e message", async () => {
+  it(`Test render ZInput con status e message`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label' status='success' message='success message'></z-input>`
+      html: `<z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label' status='success' message='success message'></z-input>`,
     });
     expect(page.root).toEqualHtml(`
       <z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label' status='success' message='success message'>
@@ -128,17 +128,15 @@ describe("Suite test ZInput - text", () => {
     `);
   });
 
-  it("Test ZInput clear", async () => {
+  it(`Test ZInput clear`, async () => {
     const page = await newSpecPage({
       components: [ZInput, ZIcon],
-      html: `<z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label'></z-input>`
+      html: `<z-input type='text' htmlid='test' placeholder='placeholder' value='value' label='label'></z-input>`,
     });
-    const icon = page.root.shadowRoot
-      .querySelector("div")
-      .querySelector("z-icon");
-    expect(page.rootInstance.value).toEqual("value");
+    const icon = page.root.shadowRoot.querySelector(`div`).querySelector(`z-icon`);
+    expect(page.rootInstance.value).toEqual(`value`);
     icon.click();
     await page.waitForChanges();
-    expect(page.rootInstance.value).toEqual("");
+    expect(page.rootInstance.value).toEqual(``);
   });
 });

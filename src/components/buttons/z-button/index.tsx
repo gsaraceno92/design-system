@@ -1,17 +1,13 @@
-import { Component, Prop, h, Element } from "@stencil/core";
-import {
-  ButtonVariantBean,
-  ButtonVariantEnum,
-  ButtonTypeEnum
-} from "../../../beans";
+import { Component, Prop, h, Element } from '@stencil/core';
+import { ButtonVariantBean, ButtonVariantEnum, ButtonTypeEnum } from '../../../beans';
 
 /**
  * @slot - button label
  */
 @Component({
-  tag: "z-button",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-button`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZButton {
   @Element() hostElement: HTMLElement;
@@ -23,7 +19,7 @@ export class ZButton {
   /** disable button */
   @Prop() disabled?: boolean = false;
   /** button type */
-  @Prop() type?: HTMLButtonElement["type"] = ButtonTypeEnum.button;
+  @Prop() type?: HTMLButtonElement[`type`] = ButtonTypeEnum.button;
   /** graphic variant */
   @Prop() variant?: ButtonVariantBean = ButtonVariantEnum.primary;
   /** reduce button size (optional) */
@@ -32,7 +28,7 @@ export class ZButton {
   @Prop() icon?: string;
 
   render() {
-    this.hostElement.style.pointerEvents = this.disabled ? "none" : "auto";
+    this.hostElement.style.pointerEvents = this.disabled ? `none` : `auto`;
 
     return (
       <button
@@ -40,7 +36,7 @@ export class ZButton {
         name={this.name}
         type={this.type}
         disabled={this.disabled}
-        class={`${this.variant} ${this.issmall && "small"}`}
+        class={`${this.variant} ${this.issmall && `small`}`}
       >
         {this.icon && <z-icon name={this.icon} width={16} height={16} />}
         <slot />

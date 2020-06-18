@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZModal } from "./index";
+import { ZModal } from './index';
 
-describe("Suite test ZModal", () => {
-  it("Test render ZModal vuoto", async () => {
+describe(`Suite test ZModal`, () => {
+  it(`Test render ZModal vuoto`, async () => {
     const page = await newSpecPage({
       components: [ZModal],
-      html: `<z-modal></z-modal>`
+      html: `<z-modal></z-modal>`,
     });
     expect(page.root).toEqualHtml(`
       <z-modal>
@@ -29,10 +29,10 @@ describe("Suite test ZModal", () => {
     `);
   });
 
-  it("Test render ZModal with props", async () => {
+  it(`Test render ZModal with props`, async () => {
     const page = await newSpecPage({
       components: [ZModal],
-      html: `<z-modal modalid="modal" modaltitle="title" modalsubtitle="subtitle"></z-modal>`
+      html: `<z-modal modalid="modal" modaltitle="title" modalsubtitle="subtitle"></z-modal>`,
     });
     expect(page.root).toEqualHtml(`
       <z-modal modalid="modal" modaltitle="title" modalsubtitle="subtitle">
@@ -57,10 +57,10 @@ describe("Suite test ZModal", () => {
     `);
   });
 
-  it("Test render ZModal with slot", async () => {
+  it(`Test render ZModal with slot`, async () => {
     const page = await newSpecPage({
       components: [ZModal],
-      html: `<z-modal><div slot="modalContent">Contenuto dello <b>slot</b></div></z-modal>`
+      html: `<z-modal><div slot="modalContent">Contenuto dello <b>slot</b></div></z-modal>`,
     });
 
     page.rootInstance.isMobile = true;

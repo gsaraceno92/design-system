@@ -1,14 +1,14 @@
-import { Component, Prop, h, Event, EventEmitter } from "@stencil/core";
+import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
 
-import { handleKeyboardSubmit } from "../../../utils/utils";
+import { handleKeyboardSubmit } from '../../../utils/utils';
 
 /**
  * @slot modalContent - set the content of the modal
  */
 @Component({
-  tag: "z-modal",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-modal`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZModal {
   /** unique id */

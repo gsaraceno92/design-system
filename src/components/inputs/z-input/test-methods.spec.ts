@@ -1,24 +1,24 @@
-import { ZInput } from "./index";
+import { ZInput } from './index';
 
-it("getValue() should return input value", async () => {
+it(`getValue() should return input value`, async () => {
   const input = new ZInput();
-  input.value = "input value";
+  input.value = `input value`;
 
   const value = await input.getValue();
-  expect(value).toBe("input value");
+  expect(value).toBe(`input value`);
 });
 
-it("setValue() should set input value", async () => {
+it(`setValue() should set input value`, async () => {
   const input = new ZInput();
-  input.value = "input value";
+  input.value = `input value`;
 
-  await input.setValue("new input value");
-  expect(input.value).toBe("new input value");
+  await input.setValue(`new input value`);
+  expect(input.value).toBe(`new input value`);
 });
 
-it("isChecked() should return checked state", async () => {
+it(`isChecked() should return checked state`, async () => {
   const input = new ZInput();
-  input.type = "checkbox";
+  input.type = `checkbox`;
 
   input.checked = true;
   const checked = await input.isChecked();

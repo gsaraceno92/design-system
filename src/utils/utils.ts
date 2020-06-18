@@ -1,19 +1,16 @@
-import { keybordKeyCodeEnum } from "../beans/index";
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { keybordKeyCodeEnum } from '../beans/index';
 
 export function format(first: string, middle: string, last: string): string {
-  return (
-    (first || "") + (middle ? ` ${middle}` : "") + (last ? ` ${last}` : "")
-  );
+  return (first || ``) + (middle ? ` ${middle}` : ``) + (last ? ` ${last}` : ``);
 }
 
 export function retrieveAsset(assetName: string): string {
-  return assetName && "assets/images/png/" + assetName;
+  return assetName && `assets/images/png/` + assetName;
 }
 
 export function randomId(): string {
-  return Math.random()
-    .toString(36)
-    .replace("0.", "");
+  return Math.random().toString(36).replace(`0.`, ``);
 }
 
 export function handleKeyboardSubmit(
@@ -41,10 +38,7 @@ export function getClickedElement(elem: null | Element = null): null | Element {
   return elem;
 }
 
-export function getElementTree(
-  elem: Element,
-  tree: Element[] = []
-): null | Element[] {
+export function getElementTree(elem: Element, tree: Element[] = []): null | Element[] {
   tree.push(elem);
 
   if (elem.parentElement) {

@@ -1,9 +1,9 @@
-import { Component, Prop, h } from "@stencil/core";
+import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: "z-pagination-page",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-pagination-page`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZPaginationPage {
   /** anchor html id */
@@ -11,11 +11,11 @@ export class ZPaginationPage {
   /** numeric page value (optional) */
   @Prop() value?: number;
   /** selected status flag */
-  @Prop() isselected: boolean = false;
+  @Prop() isselected = false;
   /** disabled status flag */
-  @Prop() isdisabled: boolean = false;
+  @Prop() isdisabled = false;
   /** visited status flag */
-  @Prop() isvisited: boolean = false;
+  @Prop() isvisited = false;
 
   page: HTMLElement;
 
@@ -23,9 +23,10 @@ export class ZPaginationPage {
     return (
       <a
         id={this.pageid}
-        ref={el => (this.page = el as HTMLElement)}
-        class={`${this.isselected && "selected"} ${this.isdisabled &&
-          "disabled"} ${this.isvisited && "visited"}`}
+        ref={(el) => (this.page = el as HTMLElement)}
+        class={`${this.isselected && `selected`} ${this.isdisabled && `disabled`} ${
+          this.isvisited && `visited`
+        }`}
         tabindex={this.isdisabled ? -1 : 0}
         role="button"
       >

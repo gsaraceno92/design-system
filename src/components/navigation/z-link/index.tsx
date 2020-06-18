@@ -1,9 +1,9 @@
-import { Component, Prop, h, Event, EventEmitter } from "@stencil/core";
+import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
 
 @Component({
-  tag: "z-link",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-link`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZLink {
   /** link id (optional) */
@@ -11,7 +11,7 @@ export class ZLink {
   /** link url (optional) */
   @Prop() href?: string;
   /** link target (optional) */
-  @Prop() target?: string = "_self";
+  @Prop() target?: string = `_self`;
   /** tabindex link attribute (optional) */
   @Prop() htmltabindex?: number = 0;
   /** disable link flag (optional) */
@@ -44,11 +44,11 @@ export class ZLink {
       <a
         id={this.htmlid}
         href={this.href ? this.href : null}
-        class={`${this.isdisabled && "disabled"}
-          ${this.isactive && "active"}
-          ${this.iswhite && "white"}`}
+        class={`${this.isdisabled && `disabled`}
+          ${this.isactive && `active`}
+          ${this.iswhite && `white`}`}
         target={this.target}
-        role={this.href ? "link" : "button"}
+        role={this.href ? `link` : `button`}
         tabindex={this.htmltabindex}
         onClick={(e: MouseEvent) => this.emitZLinkClick(e, this.htmlid)}
       >

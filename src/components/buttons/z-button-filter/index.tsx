@@ -1,26 +1,26 @@
-import { Component, Prop, Event, EventEmitter, h } from "@stencil/core";
+import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
 
 @Component({
-  tag: "z-button-filter",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-button-filter`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZButtonFilter {
   /** filter text content */
   @Prop() filtername: string;
   /** disable action on button */
-  @Prop() isfixed: boolean = false;
+  @Prop() isfixed = false;
   /** add icon to button */
-  @Prop() hasicon: boolean = true;
+  @Prop() hasicon = true;
   /** filter id */
   @Prop() filterid: string;
 
   /** remove filter click event, returns filterid */
   @Event({
-    eventName: "removefilter",
+    eventName: `removefilter`,
     composed: true,
     cancelable: true,
-    bubbles: true
+    bubbles: true,
   })
   removefilter: EventEmitter;
 
@@ -30,14 +30,16 @@ export class ZButtonFilter {
 
   handleRemovingFilterClick(): void {
     this.removefilter.emit({
-      filterid: this.filterid
+      filterid: this.filterid,
     });
   }
 
   renderFixedPillow(filtername) {
     return (
       <button class="container">
-        {this.hasicon && <z-icon class="close-icon-container" name="close" height={12} width={12} />}
+        {this.hasicon && (
+          <z-icon class="close-icon-container" name="close" height={12} width={12} />
+        )}
         <span class="text-container">{filtername}</span>
       </button>
     );
@@ -46,7 +48,15 @@ export class ZButtonFilter {
   renderDynamicPillow(filtername) {
     return (
       <button class="container isactive">
-        {this.hasicon && <z-icon class="close-icon-container" name="close" height={12} width={12} onClick={this.handleRemovingFilterClick} />}
+        {this.hasicon && (
+          <z-icon
+            class="close-icon-container"
+            name="close"
+            height={12}
+            width={12}
+            onClick={this.handleRemovingFilterClick}
+          />
+        )}
         <span class="text-container">{filtername}</span>
       </button>
     );

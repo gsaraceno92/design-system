@@ -1,17 +1,17 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZList } from "../../list/z-list";
+import { ZList } from '../../list/z-list';
 
-import { ZHeader } from "./index";
+import { ZHeader } from './index';
 
-describe("Suite test ZHeader", () => {
+describe(`Suite test ZHeader`, () => {
   /*
   TEST MOBILE
    */
-  it("Test render ZHeader mobile myz utente non loggato", async () => {
+  it(`Test render ZHeader mobile myz utente non loggato`, async () => {
     const page = await newSpecPage({
       components: [ZHeader],
-      html: initHeader(false, false, true, false, false, "")
+      html: initHeader(false, false, true, false, false, ``),
     });
 
     //Set mobile state
@@ -34,10 +34,10 @@ describe("Suite test ZHeader", () => {
   `);
   });
 
-  it("Test render ZHeader mobile non myz utente non loggato", async () => {
+  it(`Test render ZHeader mobile non myz utente non loggato`, async () => {
     const page = await newSpecPage({
       components: [ZHeader],
-      html: initHeader(true, false, false, false, false, "")
+      html: initHeader(true, false, false, false, false, ``),
     });
 
     //Set mobile state
@@ -64,10 +64,10 @@ describe("Suite test ZHeader", () => {
   `);
   });
 
-  it("Test render ZHeader mobile myz loggato", async () => {
+  it(`Test render ZHeader mobile myz loggato`, async () => {
     const page = await newSpecPage({
       components: [ZHeader],
-      html: initHeader(true, true, true, false, false, "")
+      html: initHeader(true, true, true, false, false, ``),
     });
 
     //Set mobile state
@@ -119,10 +119,10 @@ describe("Suite test ZHeader", () => {
     `);
   });
 
-  it("Test render ZHeader mobile myz loggato open", async () => {
+  it(`Test render ZHeader mobile myz loggato open`, async () => {
     const page = await newSpecPage({
       components: [ZHeader, ZList],
-      html: initHeader(true, true, true, true, true, "")
+      html: initHeader(true, true, true, true, true, ``),
     });
     page.rootInstance.isMobile = true;
     page.rootInstance.isMenuMobileOpen = true;
@@ -213,10 +213,10 @@ describe("Suite test ZHeader", () => {
   `);
   });
 
-  it("Test click ZHeader mobile toggle", async () => {
+  it(`Test click ZHeader mobile toggle`, async () => {
     const page = await newSpecPage({
       components: [ZHeader],
-      html: initHeader(true, true, true, true, true, "")
+      html: initHeader(true, true, true, true, true, ``),
     });
 
     expect(page.rootInstance.isMobile).toEqual(false);
@@ -225,10 +225,10 @@ describe("Suite test ZHeader", () => {
     expect(page.rootInstance.isMobile).toEqual(true);
 
     const menu = page.root.shadowRoot
-      .querySelector("header")
-      .querySelector("div#mobile-header")
-      .querySelector("div#mobile-menu-wrapper")
-      .querySelector("div#mobile-menu");
+      .querySelector(`header`)
+      .querySelector(`div#mobile-header`)
+      .querySelector(`div#mobile-menu-wrapper`)
+      .querySelector(`div#mobile-menu`);
     expect(page.rootInstance.isMenuMobileOpen).toEqual(false);
     menu.click();
     await page.waitForChanges();
@@ -246,10 +246,10 @@ describe("Suite test ZHeader", () => {
   TEST DESKTOP
   */
 
-  it("Test render ZHeader myz vuoto", async () => {
+  it(`Test render ZHeader myz vuoto`, async () => {
     const page = await newSpecPage({
       components: [ZHeader],
-      html: initHeader(false, false, true, false, false, "")
+      html: initHeader(false, false, true, false, false, ``),
     });
     expect(page.root).toEqualHtml(`
 
@@ -276,10 +276,10 @@ describe("Suite test ZHeader", () => {
   `);
   });
 
-  it("Test render ZHeader myz loggato", async () => {
+  it(`Test render ZHeader myz loggato`, async () => {
     const page = await newSpecPage({
       components: [ZHeader],
-      html: initHeader(true, true, true, true, true, "home")
+      html: initHeader(true, true, true, true, true, `home`),
     });
     expect(page.root).toEqualHtml(`
     <z-header
@@ -350,10 +350,10 @@ describe("Suite test ZHeader", () => {
   `);
   });
 
-  it("Test render ZHeader myz non loggato", async () => {
+  it(`Test render ZHeader myz non loggato`, async () => {
     const page = await newSpecPage({
       components: [ZHeader],
-      html: initHeader(false, false, true, true, true, "")
+      html: initHeader(false, false, true, true, true, ``),
     });
     expect(page.root).toEqualHtml(`
     <z-header
@@ -395,10 +395,10 @@ describe("Suite test ZHeader", () => {
   `);
   });
 
-  it("Test render ZHeader non myz loggato", async () => {
+  it(`Test render ZHeader non myz loggato`, async () => {
     const page = await newSpecPage({
       components: [ZHeader],
-      html: initHeader(true, true, false, true, true, "")
+      html: initHeader(true, true, false, true, true, ``),
     });
     expect(page.root).toEqualHtml(`
     <z-header
@@ -441,15 +441,15 @@ describe("Suite test ZHeader", () => {
   `);
   });
 
-  it("Test render ZHeader active menu item", async () => {
+  it(`Test render ZHeader active menu item`, async () => {
     const page = await newSpecPage({
       components: [ZHeader],
-      html: initHeader(true, true, true, true, true, "")
+      html: initHeader(true, true, true, true, true, ``),
     });
     page.rootInstance.activeMenuItem = {
-      id: "Dizionari",
-      label: "Dizionari",
-      url: "https://www.zanichelli.it/dizionari/in-primo-piano"
+      id: `Dizionari`,
+      label: `Dizionari`,
+      url: `https://www.zanichelli.it/dizionari/in-primo-piano`,
     };
     await page.waitForChanges();
     expect(page.root).toEqualHtml(`
@@ -532,50 +532,50 @@ function initHeader(
   const user = {
     islogged: true,
     id: 123456,
-    name: "Dario Docente e Professore",
+    name: `Dario Docente e Professore`,
     usergroup: 15,
     userlinks: [
-      { label: "Profilo", link: "http://www.zanichelli.it" },
-      { label: "Esci", link: "#home" }
-    ]
+      { label: `Profilo`, link: `http://www.zanichelli.it` },
+      { label: `Esci`, link: `#home` },
+    ],
   };
-  const emptyArray = "[]";
-  let userTag = "";
+  const emptyArray = `[]`;
+  let userTag = ``;
   if (userPresent) {
     userTag = userLogged
-      ? "userdata='" + JSON.stringify(user) + "'"
-      : "userdata='" + JSON.stringify(userNotLogged) + "'";
+      ? `userdata='` + JSON.stringify(user) + `'`
+      : `userdata='` + JSON.stringify(userNotLogged) + `'`;
   }
   const intlinkdata = JSON.stringify([
     {
-      id: "home",
-      label: "Home",
-      link: "#home",
+      id: `home`,
+      label: `Home`,
+      link: `#home`,
       subMenu: [
         {
-          id: "libreria",
-          label: "la mia libreria",
-          link: "#libreria"
-        }
-      ]
+          id: `libreria`,
+          label: `la mia libreria`,
+          link: `#libreria`,
+        },
+      ],
     },
     {
-      id: "Dizionari",
-      label: "Dizionari",
-      link: "https://www.zanichelli.it/dizionari/in-primo-piano"
-    }
+      id: `Dizionari`,
+      label: `Dizionari`,
+      link: `https://www.zanichelli.it/dizionari/in-primo-piano`,
+    },
   ]);
   const extlinkdata = JSON.stringify([
     {
-      id: "supporto",
-      label: "Supporto",
-      link: "https://www.zanichelli.it/contatti-e-recapiti",
-      icon: "question-mark.png"
-    }
+      id: `supporto`,
+      label: `Supporto`,
+      link: `https://www.zanichelli.it/contatti-e-recapiti`,
+      icon: `question-mark.png`,
+    },
   ]);
 
-  const logoPath = "./assets/images/png/zanichelli-logo-2.png";
-  const logoLink = "https://www.zanichelli.it";
+  const logoPath = `./assets/images/png/zanichelli-logo-2.png`;
+  const logoLink = `https://www.zanichelli.it`;
 
   return `<z-header intlinkdata='${intlinkdataBool ? intlinkdata : emptyArray}'
   extlinkdata='${extlinkdataBool ? extlinkdata : emptyArray}'

@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZLink } from "./index";
+import { ZLink } from './index';
 
-describe("Suite test ZLink", () => {
-  it("Test render ZLink vuoto", async () => {
+describe(`Suite test ZLink`, () => {
+  it(`Test render ZLink vuoto`, async () => {
     const page = await newSpecPage({
       components: [ZLink],
-      html: `<z-link></z-link>`
+      html: `<z-link></z-link>`,
     });
     expect(page.root).toEqualHtml(`
       <z-link>
@@ -19,10 +19,10 @@ describe("Suite test ZLink", () => {
     `);
   });
 
-  it("Test render ZLink con link", async () => {
+  it(`Test render ZLink con link`, async () => {
     const page = await newSpecPage({
       components: [ZLink],
-      html: `<z-link href="http://www.google.com/"></z-link>`
+      html: `<z-link href="http://www.google.com/"></z-link>`,
     });
     expect(page.root).toEqualHtml(`
       <z-link href="http://www.google.com/">
@@ -35,10 +35,10 @@ describe("Suite test ZLink", () => {
     `);
   });
 
-  it("Test render ZLink con label", async () => {
+  it(`Test render ZLink con label`, async () => {
     const page = await newSpecPage({
       components: [ZLink],
-      html: `<z-link>label</z-link>`
+      html: `<z-link>label</z-link>`,
     });
     expect(page.root).toEqualHtml(`
       <z-link>
@@ -52,10 +52,10 @@ describe("Suite test ZLink", () => {
     `);
   });
 
-  it("Test render ZLink con icon", async () => {
+  it(`Test render ZLink con icon`, async () => {
     const page = await newSpecPage({
       components: [ZLink],
-      html: `<z-link icon="icon"></z-link>`
+      html: `<z-link icon="icon"></z-link>`,
     });
     expect(page.root).toEqualHtml(`
       <z-link icon="icon">
@@ -69,10 +69,10 @@ describe("Suite test ZLink", () => {
     `);
   });
 
-  it("Test render ZLink disabled", async () => {
+  it(`Test render ZLink disabled`, async () => {
     const page = await newSpecPage({
       components: [ZLink],
-      html: `<z-link isdisabled></z-link>`
+      html: `<z-link isdisabled></z-link>`,
     });
     expect(page.root).toEqualHtml(`
       <z-link isdisabled>
@@ -85,10 +85,10 @@ describe("Suite test ZLink", () => {
     `);
   });
 
-  it("Test render ZLink white", async () => {
+  it(`Test render ZLink white`, async () => {
     const page = await newSpecPage({
       components: [ZLink],
-      html: `<z-link iswhite></z-link>`
+      html: `<z-link iswhite></z-link>`,
     });
     expect(page.root).toEqualHtml(`
       <z-link iswhite>
@@ -101,10 +101,10 @@ describe("Suite test ZLink", () => {
     `);
   });
 
-  it("Test render ZLink target", async () => {
+  it(`Test render ZLink target`, async () => {
     const page = await newSpecPage({
       components: [ZLink],
-      html: `<z-link target="_blank"></z-link>`
+      html: `<z-link target="_blank"></z-link>`,
     });
     expect(page.root).toEqualHtml(`
       <z-link target="_blank">
@@ -117,10 +117,10 @@ describe("Suite test ZLink", () => {
     `);
   });
 
-  it("Test render ZLink active", async () => {
+  it(`Test render ZLink active`, async () => {
     const page = await newSpecPage({
       components: [ZLink],
-      html: `<z-link isactive></z-link>`
+      html: `<z-link isactive></z-link>`,
     });
     expect(page.root).toEqualHtml(`
       <z-link isactive>

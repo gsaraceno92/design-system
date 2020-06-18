@@ -1,9 +1,9 @@
-import { Component, Prop, h, Event, EventEmitter } from "@stencil/core";
+import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
 
 @Component({
-  tag: "z-card-alert",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-card-alert`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZCardAlert {
   /** icon name */
@@ -34,16 +34,16 @@ export class ZCardAlert {
   }
 
   retrieveClass(): string {
-    let className = "";
+    let className = ``;
     switch (this.type) {
-      case "add":
-        className = "addAlert";
+      case `add`:
+        className = `addAlert`;
         break;
-      case "remove":
-        className = "removeAlert";
+      case `remove`:
+        className = `removeAlert`;
         break;
       default:
-        className = "";
+        className = ``;
         break;
     }
     return className;

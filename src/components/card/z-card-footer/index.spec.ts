@@ -1,11 +1,11 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { shallow, mount, render } from "enzyme";
+import { shallow, mount, render } from 'enzyme';
 
-import { ZCardFooter } from "./index";
+import { ZCardFooter } from './index';
 
-describe("Suite test ZCardFooter", () => {
-  it("Test render ZCardFooter con props", async () => {
+describe(`Suite test ZCardFooter`, () => {
+  it(`Test render ZCardFooter con props`, async () => {
     const page = await newSpecPage({
       components: [ZCardFooter],
       html: `<z-card-footer titolo="titolo" autori="Mario Rossi, Paolo Bianchi" anno="2019" isbn="123456"></z-card-footer>`,
@@ -45,7 +45,7 @@ describe("Suite test ZCardFooter", () => {
     `);
   });
 
-  it("Test render ZCardFooter senza bottone", async () => {
+  it(`Test render ZCardFooter senza bottone`, async () => {
     const page = await newSpecPage({
       components: [ZCardFooter],
       html: `<z-card-footer titolo="titolo" autori="Mario Rossi, Paolo Bianchi" anno="2019"></z-card-footer>`,
@@ -83,7 +83,7 @@ describe("Suite test ZCardFooter", () => {
     `);
   });
 
-  it("Test render ZCardFooter senza dati", async () => {
+  it(`Test render ZCardFooter senza dati`, async () => {
     const page = await newSpecPage({
       components: [ZCardFooter],
       html: `<z-card-footer></z-card-footer>`,
@@ -117,7 +117,7 @@ describe("Suite test ZCardFooter", () => {
     `);
   });
 
-  it("Test render ZCardFooter aperto", async () => {
+  it(`Test render ZCardFooter aperto`, async () => {
     const page = await newSpecPage({
       components: [ZCardFooter],
       html: `<z-card-footer titolo="titolo" autori="Mario Rossi, Paolo Bianchi" anno="2019"></z-card-footer>`,

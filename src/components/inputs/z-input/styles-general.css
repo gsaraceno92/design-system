@@ -8,7 +8,7 @@
 :host textarea,
 :host ul[role="listbox"] {
   background: var(--bg-white);
-  border-radius: 0px;
+  border-radius: 0;
   border: var(--border-size-small) solid var(--bg-grey-200);
   border-color: var(--bg-grey-200);
   box-sizing: border-box;
@@ -115,17 +115,21 @@
 :host textarea::placeholder {
   color: var(--text-grey-700);
 }
+
 ::-webkit-input-placeholder,
 ::-webkit-textarea-placeholder {
   color: var(--text-grey-700);
 }
+
 :-ms-input-placeholder,
 :-ms-textarea-placeholder {
   color: var(--text-grey-700);
 }
+
 ::-moz-placeholder {
   color: var(--text-grey-700);
 }
+
 :-moz-placeholder {
   color: var(--text-grey-700);
 }

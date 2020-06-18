@@ -1,12 +1,12 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { newSpecPage } from '@stencil/core/testing';
 
-import { ZInput } from "./index";
+import { ZInput } from './index';
 
-describe("Suite test ZInput - select", () => {
-  it("Test render ZInput - select chiusa con elementi", async () => {
+describe(`Suite test ZInput - select`, () => {
+  it(`Test render ZInput - select chiusa con elementi`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" htmlid="checkid" placeholder="select here" type="select" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false}]'> </z-input>`
+      html: `<z-input hasmessage="false" htmlid="checkid" placeholder="select here" type="select" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false}]'> </z-input>`,
     });
     page.rootInstance.isOpen = false;
     await page.waitForChanges();
@@ -29,10 +29,10 @@ describe("Suite test ZInput - select", () => {
       `);
   });
 
-  it("Test render ZInput aperto con elementi", async () => {
+  it(`Test render ZInput aperto con elementi`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" htmlid="checkid" placeholder="select here" type="select" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false},{"id":"item_1","name":"primo elemento","selected":false}]'> </z-input>`
+      html: `<z-input hasmessage="false" htmlid="checkid" placeholder="select here" type="select" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false},{"id":"item_1","name":"primo elemento","selected":false}]'> </z-input>`,
     });
     page.rootInstance.isOpen = true;
     await page.waitForChanges();
@@ -65,10 +65,10 @@ describe("Suite test ZInput - select", () => {
       `);
   });
 
-  it("Test render ZInput aperto con elemento selezionato", async () => {
+  it(`Test render ZInput aperto con elemento selezionato`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" htmlid="checkid" placeholder="select here" type="select" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false},{"id":"item_1","name":"primo elemento","selected":true}]'> </z-input>`
+      html: `<z-input hasmessage="false" htmlid="checkid" placeholder="select here" type="select" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false},{"id":"item_1","name":"primo elemento","selected":true}]'> </z-input>`,
     });
     page.rootInstance.isOpen = true;
     await page.waitForChanges();
@@ -101,10 +101,10 @@ describe("Suite test ZInput - select", () => {
     `);
   });
 
-  it("Test render ZInput chiuso disabilitato con elementi", async () => {
+  it(`Test render ZInput chiuso disabilitato con elementi`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" htmlid="checkid" placeholder="select here" disabled readonly type="select" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false},{"id":"item_1","name":"primo elemento","selected":false}]'> </z-input>`
+      html: `<z-input hasmessage="false" htmlid="checkid" placeholder="select here" disabled readonly type="select" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false},{"id":"item_1","name":"primo elemento","selected":false}]'> </z-input>`,
     });
     page.rootInstance.isOpen = false;
     await page.waitForChanges();
@@ -127,10 +127,10 @@ describe("Suite test ZInput - select", () => {
       `);
   });
 
-  it("Test render ZInput chiusa con elementi, status/messages", async () => {
+  it(`Test render ZInput chiusa con elementi, status/messages`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input htmlid="checkid" placeholder="select here" type="select" status="success" message="message message" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false},{"id":"item_1","name":"primo elemento","selected":false}]'> </z-input>`
+      html: `<z-input htmlid="checkid" placeholder="select here" type="select" status="success" message="message message" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false},{"id":"item_1","name":"primo elemento","selected":false}]'> </z-input>`,
     });
     page.rootInstance.isOpen = false;
     await page.waitForChanges();
@@ -157,10 +157,10 @@ describe("Suite test ZInput - select", () => {
         `);
   });
 
-  it("Test render ZInput aperto con elementi, un elemento disabilitato", async () => {
+  it(`Test render ZInput aperto con elementi, un elemento disabilitato`, async () => {
     const page = await newSpecPage({
       components: [ZInput],
-      html: `<z-input hasmessage="false" htmlid="checkid" placeholder="select here" type="select" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false},{"id":"item_1","name":"primo elemento","selected":false,"disabled":true}]'> </z-input>`
+      html: `<z-input hasmessage="false" htmlid="checkid" placeholder="select here" type="select" label="default" items='[{"id":"item_0","name":"SELECT HERE questa opzione con etichetta lunga lunghissima","selected":false},{"id":"item_1","name":"primo elemento","selected":false,"disabled":true}]'> </z-input>`,
     });
     page.rootInstance.isOpen = true;
     await page.waitForChanges();

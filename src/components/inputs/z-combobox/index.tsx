@@ -6,21 +6,21 @@ import {
   Listen,
   Watch,
   Event,
-  EventEmitter
-} from "@stencil/core";
+  EventEmitter,
+} from '@stencil/core';
 import {
   ComboItemBean,
   InputTypeBean,
   InputTypeEnum,
-  keybordKeyCodeEnum
-} from "../../../beans";
-import { ZInput } from "../z-input";
-import { handleKeyboardSubmit } from "../../../utils/utils";
+  keybordKeyCodeEnum,
+} from '../../../beans';
+import { ZInput } from '../z-input';
+import { handleKeyboardSubmit } from '../../../utils/utils';
 
 @Component({
-  tag: "z-combobox",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-combobox`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZCombobox {
   /** input unique id */
@@ -38,21 +38,21 @@ export class ZCombobox {
   /** search input title text (optional) */
   @Prop() searchtitle?: string;
   /** no result text message */
-  @Prop() noresultslabel?: string = "Nessun risultato";
+  @Prop() noresultslabel?: string = `Nessun risultato`;
   /** toggle combo list opening flag */
-  @Prop({ mutable: true }) isopen: boolean = true;
+  @Prop({ mutable: true }) isopen = true;
   /** fixed style flag */
-  @Prop() isfixed: boolean = false;
+  @Prop() isfixed = false;
   /** close combobox list text */
-  @Prop() closesearchtext?: string = "Chiudi";
+  @Prop() closesearchtext?: string = `Chiudi`;
   /** show "check all" checkbox (optional) */
   @Prop() hascheckall?: boolean = false;
   /** check all label (optional) */
-  @Prop() checkalltext?: string = "Seleziona tutti";
+  @Prop() checkalltext?: string = `Seleziona tutti`;
   /** uncheck all label (optional) */
-  @Prop() uncheckalltext?: string = "Deseleziona tutti";
+  @Prop() uncheckalltext?: string = `Deseleziona tutti`;
   /** max number of checkable items (0 = unlimited) */
-  @Prop() maxcheckableitems: number = 0;
+  @Prop() maxcheckableitems = 0;
 
   @State() searchValue: string;
   @State() selectedCounter: number;
@@ -61,11 +61,10 @@ export class ZCombobox {
   private itemsList: ComboItemBean[] = [];
   private inputType: InputTypeBean = InputTypeEnum.text;
 
-  @Watch("items")
+  @Watch(`items`)
   watchItems() {
-    this.itemsList =
-      typeof this.items === "string" ? JSON.parse(this.items) : this.items;
-    this.selectedCounter = this.itemsList.filter(item => item.checked).length;
+    this.itemsList = typeof this.items === `string` ? JSON.parse(this.items) : this.items;
+    this.selectedCounter = this.itemsList.filter((item) => item.checked).length;
     if (this.searchValue) {
       this.filterItems(this.searchValue);
     } else {
@@ -73,14 +72,13 @@ export class ZCombobox {
     }
   }
 
-  @Listen("inputCheck")
+  @Listen(`inputCheck`)
   inputCheckListener(e: CustomEvent) {
-    const id = e.detail.id.replace(`combo-checkbox-${this.inputid}-`, "");
+    const id = e.detail.id.replace(`combo-checkbox-${this.inputid}-`, ``);
 
     if (
-      id === "check-all" &&
-      (!this.maxcheckableitems ||
-        this.maxcheckableitems >= this.itemsList.length)
+      id === `check-all` &&
+      (!this.maxcheckableitems || this.maxcheckableitems >= this.itemsList.length)
     ) {
       return this.checkAll(e.detail.checked);
     }
@@ -109,7 +107,7 @@ export class ZCombobox {
   }
 
   componentWillRender() {
-    this.selectedCounter = this.itemsList.filter(item => item.checked).length;
+    this.selectedCounter = this.itemsList.filter((item) => item.checked).length;
     if (this.searchValue) {
       this.filterItems(this.searchValue);
     }
@@ -129,7 +127,7 @@ export class ZCombobox {
     this.searchValue = value;
 
     this.resetRenderItemsList();
-    this.renderItemsList = this.renderItemsList.filter(item => {
+    this.renderItemsList = this.renderItemsList.filter((item) => {
       const start = item.name.toUpperCase().indexOf(value.toUpperCase());
       const end = start + value.length;
       const newName =
@@ -145,14 +143,14 @@ export class ZCombobox {
   checkAll(checked = true): void {
     this.itemsList = this.itemsList.map((item: ComboItemBean) => ({
       ...item,
-      checked: checked
+      checked: checked,
     }));
     this.resetRenderItemsList();
     this.emitComboboxChange();
   }
 
   closeFilterItems(): void {
-    this.searchValue = "";
+    this.searchValue = ``;
     this.resetRenderItemsList();
   }
 
@@ -168,17 +166,13 @@ export class ZCombobox {
         onKeyDown={(ev: KeyboardEvent) => {
           if (ev.keyCode === keybordKeyCodeEnum.SPACE) ev.preventDefault();
         }}
-        onKeyUp={(ev: KeyboardEvent) =>
-          handleKeyboardSubmit(ev, this.closeComboBox)
-        }
+        onKeyUp={(ev: KeyboardEvent) => handleKeyboardSubmit(ev, this.closeComboBox)}
         role="button"
         tabindex={0}
       >
         <h2>
           {this.label}
-          <span>
-            {this.selectedCounter > 0 && ` (${this.selectedCounter})`}
-          </span>
+          <span>{this.selectedCounter > 0 && ` (${this.selectedCounter})`}</span>
         </h2>
         <z-icon name="drop-down" width={18} height={18} />
       </div>
@@ -201,7 +195,7 @@ export class ZCombobox {
     if (!this.isopen) return;
 
     return (
-      <div class={this.searchValue && "search"} tabindex={-1}>
+      <div class={this.searchValue && `search`} tabindex={-1}>
         {this.renderList(this.renderItemsList)}
         {this.searchValue && this.renderCloseButton()}
       </div>
@@ -258,9 +252,7 @@ export class ZCombobox {
       <div>
         <a
           onClick={() => this.closeFilterItems()}
-          onKeyUp={(e: KeyboardEvent) =>
-            handleKeyboardSubmit(e, this.closeFilterItems)
-          }
+          onKeyUp={(e: KeyboardEvent) => handleKeyboardSubmit(e, this.closeFilterItems)}
           role="button"
           tabindex={0}
         >
@@ -302,8 +294,7 @@ export class ZCombobox {
           htmlid={`combo-checkbox-${this.inputid}-check-all`}
           label={allChecked ? this.uncheckalltext : this.checkalltext}
           disabled={
-            this.maxcheckableitems &&
-            this.maxcheckableitems < this.itemsList.length
+            this.maxcheckableitems && this.maxcheckableitems < this.itemsList.length
           }
         />
       </div>
@@ -314,7 +305,7 @@ export class ZCombobox {
     return (
       <div
         data-action={`combo-${this.inputid}`}
-        class={`${this.isopen && "open"} ${this.isfixed && "fixed"}`}
+        class={`${this.isopen && `open`} ${this.isfixed && `fixed`}`}
         id={this.inputid}
       >
         {this.renderHeader()}

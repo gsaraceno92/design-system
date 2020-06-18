@@ -1,16 +1,16 @@
-import { Component, Prop, h, State } from "@stencil/core";
-import { MenuItem, keybordKeyCodeEnum } from "../../../beans/index";
+import { Component, Prop, h, State } from '@stencil/core';
+import { MenuItem, keybordKeyCodeEnum } from '../../../beans/index';
 
 import {
   handleKeyboardSubmit,
   getClickedElement,
-  getElementTree
-} from "../../../utils/utils";
+  getElementTree,
+} from '../../../utils/utils';
 
 @Component({
-  tag: "z-menu-dropdown",
-  styleUrl: "styles.css",
-  shadow: true
+  tag: `z-menu-dropdown`,
+  styleUrl: `styles.css`,
+  shadow: true,
 })
 export class ZMenuDropdown {
   /** user name text */
@@ -20,7 +20,7 @@ export class ZMenuDropdown {
   /** unique button id */
   @Prop() buttonid: string;
 
-  @State() ismenuopen: boolean = false;
+  @State() ismenuopen = false;
 
   linkarray: MenuItem[];
 
@@ -31,7 +31,7 @@ export class ZMenuDropdown {
 
   componentWillRender() {
     this.linkarray =
-      typeof this.menucontent === "string"
+      typeof this.menucontent === `string`
         ? JSON.parse(this.menucontent)
         : this.menucontent;
   }
@@ -40,7 +40,7 @@ export class ZMenuDropdown {
     if (this.ismenuopen) {
       return (
         <ul>
-          {this.linkarray.map(bean => (
+          {this.linkarray.map((bean) => (
             <li>
               <z-link htmlid={bean.id} href={bean.link} icon={bean.icon}>
                 {bean.label}
@@ -61,7 +61,7 @@ export class ZMenuDropdown {
   }
 
   retriveMenuClass() {
-    if (this.ismenuopen) return "menu-opened";
+    if (this.ismenuopen) return `menu-opened`;
   }
 
   handleToggle() {
@@ -69,17 +69,16 @@ export class ZMenuDropdown {
   }
 
   handleFocus(e: MouseEvent | KeyboardEvent) {
-    if (e instanceof KeyboardEvent && e.keyCode !== keybordKeyCodeEnum.TAB)
-      return;
+    if (e instanceof KeyboardEvent && e.keyCode !== keybordKeyCodeEnum.TAB) return;
 
     const tree = getElementTree(getClickedElement());
     const menuParent = tree.find(
-      (elem: any) => elem.nodeName.toLowerCase() === "z-menu-dropdown"
+      (elem: any) => elem.nodeName.toLowerCase() === `z-menu-dropdown`
     );
 
     if (!menuParent) {
-      document.removeEventListener("click", this.handleFocus);
-      document.removeEventListener("keyup", this.handleFocus);
+      document.removeEventListener(`click`, this.handleFocus);
+      document.removeEventListener(`keyup`, this.handleFocus);
       this.ismenuopen = false;
     }
   }
@@ -91,12 +90,10 @@ export class ZMenuDropdown {
         role="button"
         tabindex="0"
         onFocus={() => {
-          document.addEventListener("click", this.handleFocus);
-          document.addEventListener("keyup", this.handleFocus);
+          document.addEventListener(`click`, this.handleFocus);
+          document.addEventListener(`keyup`, this.handleFocus);
         }}
-        onKeyUp={(e: KeyboardEvent) =>
-          handleKeyboardSubmit(e, this.handleToggle)
-        }
+        onKeyUp={(e: KeyboardEvent) => handleKeyboardSubmit(e, this.handleToggle)}
       >
         <div class="container" onClick={() => this.handleToggle()}>
           <z-icon name="user" width={14} height={14} />

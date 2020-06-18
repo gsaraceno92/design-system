@@ -6,7 +6,8 @@ header {
   height: var(--basex6);
   position: relative;
   border-bottom: var(--border-base) solid var(--bg-grey-200);
-  border-radius: var(--radius-base) var(--radius-base) var(--radius-min)
+  border-radius:
+    var(--radius-base) var(--radius-base) var(--radius-min)
     var(--radius-min);
   background-color: var(--bg-white);
 }
@@ -27,7 +28,7 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.22px;
   line-height: var(--basex2);
-  margin: 0px;
+  margin: 0;
   padding: var(--basex2);
   white-space: nowrap;
   overflow: hidden;
