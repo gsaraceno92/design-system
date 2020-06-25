@@ -29,7 +29,7 @@
   },
   "husky": {
     "hooks": {
-      "no-pre-commit": "yarn lint && pretty-quick --staged"
+      "pre-commit": "yarn test && yarn test.e2e && pretty-quick --staged"
     }
   },
   "devDependencies": {
@@ -65,13 +65,6 @@
     "storybook-addons-abstract": "^5.0.6",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0"
-  },
-  "pre-commit": {
-    "colors": true,
-    "silent": false,
-    "run": [
-      "test"
-    ]
   },
   "license": "MIT",
   "dependencies": {
