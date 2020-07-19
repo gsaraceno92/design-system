@@ -12,7 +12,7 @@
     "grid-tablet-gutter": "24p"
   },
   "grid-desktop": {
-    "grid-desktop-viewport": "1024px",
+    "grid-desktop-viewport": "1152px",
     "grid-desktop-column": "12",
     "grid-desktop-margin": "24px",
     "grid-desktop-gutter": "24px"
