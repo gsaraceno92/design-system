@@ -7,7 +7,8 @@ import {
   Event,
   EventEmitter,
   Watch,
-  Element
+  Element,
+  Listen
 } from "@stencil/core";
 import {
   InputTypeBean,
@@ -71,7 +72,7 @@ export class ZInput {
 
   private statusIcons = {
     success: "circle-check",
-    error: "circle-cross-stroke",
+    error: "circle-cross",
     warning: "circle-warning"
   };
   private timer;
@@ -96,6 +97,23 @@ export class ZInput {
     }
   }
 
+  @Listen("inputCheck", { target: "document" })
+  inputCheckListener(e: CustomEvent) {
+    const data = e.detail;
+    switch (this.type) {
+      case InputTypeEnum.radio:
+        if (
+          data.type === InputTypeEnum.radio &&
+          data.name === this.name &&
+          data.id !== this.htmlid
+        ) {
+          this.checked = false;
+        }
+      default:
+        return;
+    }
+  }
+
   /** get the input value */
   @Method()
   async getValue(): Promise<string> {
@@ -113,6 +131,7 @@ export class ZInput {
   async isChecked(): Promise<boolean> {
     switch (this.type) {
       case InputTypeEnum.checkbox:
+      case InputTypeEnum.radio:
         return this.checked;
       default:
         return false;
@@ -149,10 +168,15 @@ export class ZInput {
     this.stopTyping.emit({ value: value });
   }
 
-  /** Emitted on checkbox check/uncheck, returns id, checked */
+  /** Emitted on checkbox check/uncheck, returns id, checked, type, name */
   @Event() inputCheck: EventEmitter;
   emitInputCheck(checked: boolean) {
-    this.inputCheck.emit({ id: this.htmlid, checked: checked });
+    this.inputCheck.emit({
+      id: this.htmlid,
+      checked: checked,
+      type: this.type,
+      name: this.name
+    });
   }
 
   /** Emitted on select option selection, returns select id, selected option id */
@@ -226,7 +250,7 @@ export class ZInput {
 
     return (
       <z-icon
-        name="close"
+        name="cross"
         onClick={(e: any) => this.emitInputChange("", e.keyCode)}
       />
     );
@@ -326,6 +350,42 @@ export class ZInput {
   }
 
   /* END checkbox */
+
+  /* START radio */
+
+  handleRadioChange() {
+    this.checked = true;
+    this.emitInputCheck(this.checked);
+  }
+
+  renderRadio() {
+    return (
+      <div class="radioWrapper">
+        <input
+          id={this.htmlid}
+          type="radio"
+          name={this.name}
+          checked={this.checked}
+          value={this.value}
+          disabled={this.disabled}
+          readonly={this.readonly}
+          onChange={() => this.handleRadioChange()}
+        />
+
+        <label
+          htmlFor={this.htmlid}
+          class={`radioLabel ${this.labelafter ? "after" : "before"}`}
+        >
+          <z-icon
+            name={this.checked ? "radio-button-checked" : "radio-button"}
+            aria-hidden={true}
+          />
+          {this.label && <span innerHTML={this.label} />}
+        </label>
+      </div>
+    );
+  }
+  /* END radio */
 
   /* START select */
 
@@ -434,9 +494,9 @@ export class ZInput {
       index = key <= 0 ? this.itemsList.length - 1 : key - 1;
     }
 
-    const focusElem = this.hostElement.shadowRoot.getElementById(
-      `${this.htmlid}_${index}`
-    );
+    const focusElem = this.hostElement.shadowRoot.querySelector(
+      `#${this.htmlid}_${index}`
+    ) as HTMLElement;
     if (focusElem) focusElem.focus();
   }
 
@@ -448,7 +508,10 @@ export class ZInput {
       document.removeEventListener("click", this.handleSelectFocus);
       document.removeEventListener("keyup", this.handleSelectFocus);
       if (selfFocusOnClose) {
-        this.hostElement.shadowRoot.getElementById(this.htmlid).focus();
+        const elem = this.hostElement.shadowRoot.querySelector(
+          `#${this.htmlid}`
+        ) as HTMLElement;
+        elem.focus();
       }
     }
 
@@ -489,6 +552,8 @@ export class ZInput {
         return this.renderTextarea();
       case InputTypeEnum.checkbox:
         return this.renderCheckbox();
+      case InputTypeEnum.radio:
+        return this.renderRadio();
       case InputTypeEnum.select:
         return this.renderSelect();
       default:
