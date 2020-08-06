@@ -21,18 +21,19 @@ export class ZFooter {
   @State() isOpen: boolean[] = [];
   @State() isMobile: boolean;
 
-  jsonData: FooterBean;
+  jsonData: FooterBean | undefined;
 
   componentWillLoad() {
-    this.jsonData = JSON.parse(this.data);
-    this.isOpen = Array<boolean>(this.jsonData.zanichelliLinks.length).fill(
+    this.jsonData = this.data && JSON.parse(this.data);
+    this.isOpen = this.jsonData && this.jsonData.zanichelliLinks ? Array<boolean>(this.jsonData.zanichelliLinks.length).fill(
       false
-    );
+    ) : [false];
+    window.addEventListener("resize", this.resize.bind(this));
+    this.resize();
   }
 
   componentDidLoad() {
-    window.addEventListener("resize", this.resize.bind(this));
-    this.resize();
+
   }
 
   resize() {
