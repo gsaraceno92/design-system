@@ -66,6 +66,8 @@ export class ZInput {
   @Prop() typingtimeout?: number = 300;
   /** items: available for select */
   @Prop() items?: SelectItemBean[] | string;
+  /** autocomplete attribute for storing and autofilling credentials (optional): available for text, password, number, email */
+  @Prop() htmlautocomplete?: string;
 
   @State() isTyping: boolean = false;
   @State() textareaWrapperHover: string = "";
@@ -219,6 +221,7 @@ export class ZInput {
       readonly: this.readonly,
       required: this.required,
       title: this.htmltitle,
+      autocomplete: this.htmlautocomplete,
       class: `
         ${this.status ? "input_" + this.status : "input_default"}
         ${this.isTyping && "istyping"}

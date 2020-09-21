@@ -365,6 +365,10 @@ export namespace Components {
          */
         "hasmessage"?: boolean;
         /**
+          * autocomplete attribute for storing and autofilling credentials (optional): available for text, password, number, email
+         */
+        "htmlautocomplete"?: string;
+        /**
           * the id of the input element
          */
         "htmlid": string;
@@ -1318,6 +1322,10 @@ declare namespace LocalJSX {
           * show input helper message (optional): available for text, password, number, email, textarea, select
          */
         "hasmessage"?: boolean;
+        /**
+          * autocomplete attribute for storing and autofilling credentials (optional): available for text, password, number, email
+         */
+        "htmlautocomplete"?: string;
         /**
           * the id of the input element
          */
